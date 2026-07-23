@@ -1,0 +1,248 @@
+/* wizard.css - Styles for the multi-step form flow */
+
+.wizard-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+}
+
+.wizard-header {
+  margin-bottom: var(--space-md);
+}
+
+.wizard-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  padding-top: var(--space-md);
+}
+
+.progress-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.progress-bar-bg {
+  flex-grow: 1;
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.wizard-title {
+  font-size: 2rem;
+  margin-bottom: var(--space-xs);
+  color: var(--primary-color);
+}
+
+.wizard-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.wizard-section-title {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-md);
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: var(--space-xs);
+}
+
+.wizard-step {
+  animation: fadeIn 0.4s var(--transition-fast) forwards;
+  flex-grow: 1;
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+  color: var(--text-primary);
+}
+
+.form-label-optional {
+  font-weight: 400;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(31, 58, 75, 0.1);
+}
+
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+  border-color: #d32f2f;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Checkbox and Radio styling */
+.checkbox-group,
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-label,
+.radio-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.checkbox-label input[type="checkbox"],
+.radio-label input[type="radio"] {
+  margin-top: 0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--primary-color);
+}
+
+.wizard-footer {
+  margin-top: var(--space-lg);
+  padding: var(--space-md) 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-color);
+}
+
+.wizard-footer .btn-back {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.wizard-footer .btn-back:hover {
+  background: var(--border-color);
+  color: var(--text-primary);
+  box-shadow: none;
+}
+
+.wizard-footer .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.success-screen {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-icon {
+  color: var(--success-color);
+  margin-bottom: var(--space-md);
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .wizard-title {
+    font-size: 1.5rem;
+  }
+  .wizard-section-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Selectable Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.selectable-card {
+  background-color: var(--surface-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.selectable-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.selectable-card.selected {
+  border-color: var(--accent-color);
+  background-color: rgba(226, 192, 68, 0.05); /* very light accent */
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.selectable-card-icon {
+  color: var(--primary-color);
+}
+
+.selectable-card.selected .selectable-card-icon {
+  color: var(--accent-color);
+}
+
+.selectable-card-label {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
