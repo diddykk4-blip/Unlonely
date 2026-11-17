@@ -85,7 +85,7 @@ const Home = () => {
             <div className="trust-bar animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <span>48 Hour Matching</span>
               <span className="dot">•</span>
-              <span>DBS Vetted Staff</span>
+              <span>DBS Vetted Staffs</span>
               <span className="dot">•</span>
               <span>GDPR Protected</span>
               <span className="dot">•</span>
