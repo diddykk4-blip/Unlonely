@@ -33,7 +33,7 @@ const Navbar = () => {
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <Link to="/" className="nav-logo">
-          <img src="/logo.png" alt="Logo" style={{ height: '32px', mixBlendMode: 'multiply' }} />
+          <img src="/logo.png" alt="Unlonely logo" className="nav-logo-img" />
           <span>Unlonely</span>
         </Link>
         
