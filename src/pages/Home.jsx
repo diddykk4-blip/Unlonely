@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Users, Clock, Heart, Phone, ArrowRight, ChevronDown } from 'lucide-react';
+import { Shield, Users, Clock, Heart, Phone, ArrowRight, ChevronDown, Star, ShieldCheck, X } from 'lucide-react';
 import './Home.css';
 
 const HOME_FAQS = [
@@ -61,11 +61,20 @@ const Home = () => {
 
             {/* Trust Reassurance Row */}
             <div className="hero-reassurance-row animate-fade-in" style={{ animationDelay: '0.35s' }}>
-              <span className="reassurance-item">⭐ <strong>4.9/5</strong> Rating</span>
+              <span className="reassurance-item">
+                <Star size={16} className="reassurance-gold-icon" fill="currentColor" />
+                <span><strong>4.9/5</strong> Rating</span>
+              </span>
               <span className="reassurance-dot">•</span>
-              <span className="reassurance-item">🛡️ <strong>DBS Checked</strong></span>
+              <span className="reassurance-item">
+                <ShieldCheck size={17} className="reassurance-gold-icon" />
+                <span><strong>DBS Checked</strong></span>
+              </span>
               <span className="reassurance-dot">•</span>
-              <span className="reassurance-item">❌ <strong>No Contracts</strong></span>
+              <span className="reassurance-item">
+                <X size={16} strokeWidth={2.8} className="reassurance-gold-icon" />
+                <span><strong>No Contracts</strong></span>
+              </span>
             </div>
 
             {/* Phone Reassurance */}

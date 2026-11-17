@@ -147,6 +147,18 @@
   justify-content: center;
 }
 
+.reassurance-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.reassurance-gold-icon {
+  color: #E2C044;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.5));
+}
+
 .reassurance-item strong {
   color: #fff;
   font-weight: 600;
