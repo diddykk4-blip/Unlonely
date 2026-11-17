@@ -99,7 +99,7 @@ const Home = () => {
       <section className="section bg-light">
         <div className="container">
           <div className="text-center services-header">
-            <h2>Connection that fits real life</h2>
+            <h2>Companionship, Your Way</h2>
             <p>From a friendly chat over coffee to accompanied museum visits.</p>
           </div>
           <div className="grid-3 services-grid">
@@ -130,7 +130,7 @@ const Home = () => {
         <div className="container">
           <div className="text-center support-header">
             <span className="support-tag">WHO WE SUPPORT</span>
-            <h2 className="support-main-title">Loneliness does not look the same for everyone</h2>
+            <h2 className="support-main-title">Connection means something different to everyone</h2>
             <p className="support-main-subtitle">
               Unlonely also welcomes any adult who wants more genuine, regular human connection.
             </p>
@@ -191,7 +191,7 @@ const Home = () => {
         <div className="container home-faq-container">
           <div className="text-center home-faq-header">
             <span className="faq-tag">QUESTIONS</span>
-            <h2 className="faq-main-title">A friendly face could be closer than you think</h2>
+            <h2 className="faq-main-title">Good company might be closer than you think</h2>
           </div>
 
           <div className="home-faq-accordion">
@@ -222,13 +222,13 @@ const Home = () => {
           <div className="friendly-face-banner text-center">
             <div className="friendly-face-banner-overlay"></div>
             <div className="friendly-face-banner-content">
-              <h2>A friendly face could be closer than you think</h2>
+              <h2>A better day could start with a conversation</h2>
               <p>
                 Experience an initial companionship session at affordable prices, or talk to us about the membership that fits your life.
               </p>
               <div className="friendly-banner-actions">
                 <Link to="/find-a-companion" className="btn btn-primary friendly-btn-primary">
-                  Book Now
+                  Get Started
                 </Link>
                 <Link to="/contact" className="btn btn-outline friendly-btn-outline">
                   Speak to Unlonely
