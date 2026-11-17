@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import HowItWorks from './pages/HowItWorks';
-import Pricing from './pages/Pricing';
 import Companions from './pages/Companions';
 import Safety from './pages/Safety';
 import FAQs from './pages/FAQs';
@@ -25,7 +24,6 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="services" element={<Services />} />
           <Route path="how-it-works" element={<HowItWorks />} />
-          <Route path="pricing" element={<Pricing />} />
           <Route path="companions" element={<Companions />} />
           <Route path="who-we-support/:slug" element={<WhoWeSupportDetail />} />
           <Route path="safety" element={<Safety />} />

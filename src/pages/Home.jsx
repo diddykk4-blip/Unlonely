@@ -18,7 +18,7 @@ const HOME_FAQS = [
   },
   {
     q: 'What is included in each membership?',
-    a: 'The £11 introductory hour is a one-off companionship hour. Digital Check-Ins starts at £25/month for phone and/or video companionship. Premium In-Person is £260/month with a guaranteed consistent companion. Exact frequency and scheduling are confirmed during your membership conversation.'
+    a: 'We offer affordable introductory companionship as well as flexible memberships. Pricing details are shared during your membership conversation with our team, so we can find an arrangement that fits your life.'
   },
   {
     q: 'Can I arrange companionship for someone else?',
@@ -224,11 +224,11 @@ const Home = () => {
             <div className="friendly-face-banner-content">
               <h2>A friendly face could be closer than you think</h2>
               <p>
-                Experience an initial companionship hour for £11, or talk to us about the membership that fits your life.
+                Experience an initial companionship session at affordable prices, or talk to us about the membership that fits your life.
               </p>
               <div className="friendly-banner-actions">
                 <Link to="/find-a-companion" className="btn btn-primary friendly-btn-primary">
-                  Book Your £11 Introductory Hour
+                  Book Now
                 </Link>
                 <Link to="/contact" className="btn btn-outline friendly-btn-outline">
                   Speak to Unlonely

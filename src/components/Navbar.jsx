@@ -25,7 +25,6 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'How it Works', path: '/how-it-works' },
-    { name: 'Pricing', path: '/pricing' },
     { name: 'Companions', path: '/companions' }
   ];
 
@@ -49,7 +48,7 @@ const Navbar = () => {
           ))}
           <div className="nav-buttons-mobile">
             <Link to="/contact" className="btn btn-outline">Contact</Link>
-            <Link to="/pricing" className="btn btn-primary">Book Now</Link>
+            <Link to="/find-a-companion" className="btn btn-primary">Book Now</Link>
           </div>
         </nav>
 
@@ -59,7 +58,7 @@ const Navbar = () => {
             <span>0800 123 4567</span>
           </a>
           <Link to="/contact" className="btn btn-outline">Contact</Link>
-          <Link to="/pricing" className="btn btn-primary">Book Now</Link>
+          <Link to="/find-a-companion" className="btn btn-primary">Book Now</Link>
         </div>
 
         <button 
