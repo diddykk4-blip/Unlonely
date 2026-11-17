@@ -62,7 +62,7 @@
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: var(--accent-color);
+  background-color: #FF6B4A;
   transition: width var(--transition-fast);
 }
 

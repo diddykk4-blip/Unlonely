@@ -285,11 +285,11 @@
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(226, 192, 68, 0.18) 0%, rgba(133, 156, 138, 0.15) 100%);
+  background: linear-gradient(135deg, rgba(255, 107, 74, 0.14) 0%, rgba(255, 107, 74, 0.08) 100%);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #c9a42a;
+  color: #FF6B4A;
   margin-bottom: var(--space-sm);
 }
 
