@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
-              <Heart size={24} className="logo-icon" />
+              <img src="/logo.png" alt="Unlonely logo" className="footer-logo-img" />
               <span>Unlonely</span>
             </Link>
             <p className="footer-desc">

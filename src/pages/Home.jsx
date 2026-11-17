@@ -34,11 +34,11 @@ const Home = () => {
       {/* Services Preview */}
       <section className="section bg-light">
         <div className="container">
-          <div className="text-center mb-lg">
+          <div className="text-center services-header">
             <h2>How We Can Help</h2>
             <p>From a friendly chat over coffee to accompanied museum visits.</p>
           </div>
-          <div className="grid-3">
+          <div className="grid-3 services-grid">
             <div className="card">
               <div className="card-icon"><Heart size={32} /></div>
               <h3>Home Visits</h3>
@@ -63,10 +63,11 @@ const Home = () => {
 
       {/* CTA Section */}
       <section className="section cta-section text-center">
-        <div className="container">
+        <div className="cta-overlay"></div>
+        <div className="container cta-container">
           <h2>Ready to find your companion?</h2>
-          <p className="mb-md">Join hundreds of families who trust Unlonely for genuine human connection.</p>
-          <Link to="/contact" className="btn btn-primary">Get in Touch</Link>
+          <p className="cta-subtitle">Join hundreds of families who trust Unlonely for genuine human connection.</p>
+          <Link to="/contact" className="btn btn-primary cta-btn">Get in Touch</Link>
         </div>
       </section>
     </div>
