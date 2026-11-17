@@ -269,12 +269,13 @@ const getBotResponse = (userText) => {
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(true);
   const [messages, setMessages] = useState([INITIAL_GREETING]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [hasUnread, setHasUnread] = useState(true);
-  const [showContactTray, setShowContactTray] = useState(false);
 
+  const messagesContainerRef = useRef(null);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -282,13 +283,24 @@ const ChatWidget = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // When chat is clicked/opened, show messages from the top!
   useEffect(() => {
     if (isOpen) {
-      scrollToBottom();
       setHasUnread(false);
+      setShowPopup(false);
+      if (messagesContainerRef.current) {
+        messagesContainerRef.current.scrollTop = 0;
+      }
       setTimeout(() => inputRef.current?.focus(), 250);
     }
-  }, [isOpen, messages, isTyping]);
+  }, [isOpen]);
+
+  // When new messages arrive while open, scroll down smoothly
+  useEffect(() => {
+    if (isOpen && messages.length > 1) {
+      scrollToBottom();
+    }
+  }, [messages.length, isTyping]);
 
   const handleSendMessage = (userMessageText) => {
     const trimmed = userMessageText.trim();
@@ -344,19 +356,57 @@ const ChatWidget = () => {
 
   return (
     <div className="unlonely-chat-widget">
-      {/* Floating Launcher Button */}
+      {/* Floating Launcher Button & Pop Up Message */}
       {!isOpen && (
-        <button 
-          className="chat-launcher-btn"
-          onClick={() => setIsOpen(true)}
-          aria-label="Open Unlonely Virtual Assistant"
-        >
-          <div className="chat-launcher-icon-wrapper">
-            <MessageCircle size={28} className="chat-launcher-icon" />
-            {hasUnread && <span className="chat-unread-badge" />}
-          </div>
-          <span className="chat-launcher-tooltip">Chat with us</span>
-        </button>
+        <div className="chat-launcher-container">
+          {showPopup && (
+            <div 
+              className="chat-popup-bubble animate-fade-in" 
+              onClick={() => {
+                setIsOpen(true);
+                setShowPopup(false);
+              }}
+              role="button"
+              tabIndex={0}
+              aria-label="Welcome popup, click to open chat"
+            >
+              <div className="chat-popup-content">
+                <span className="chat-popup-wave">👋</span>
+                <p className="chat-popup-text">
+                  Welcome to Unlonely, how may I assist you?
+                </p>
+              </div>
+              <button 
+                type="button" 
+                className="chat-popup-close" 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowPopup(false);
+                }}
+                aria-label="Dismiss greeting"
+                title="Dismiss"
+              >
+                <X size={13} />
+              </button>
+              <div className="chat-popup-arrow"></div>
+            </div>
+          )}
+
+          <button 
+            className="chat-launcher-btn"
+            onClick={() => {
+              setIsOpen(true);
+              setShowPopup(false);
+            }}
+            aria-label="Open Unlonely Virtual Assistant"
+          >
+            <div className="chat-launcher-icon-wrapper">
+              <MessageCircle size={28} className="chat-launcher-icon" />
+              {hasUnread && <span className="chat-unread-badge" />}
+            </div>
+            <span className="chat-launcher-tooltip">Chat with us</span>
+          </button>
+        </div>
       )}
 
       {/* Live Chat Window */}
@@ -395,28 +445,32 @@ const ChatWidget = () => {
             </div>
           </div>
 
-          {/* Human Contact Quick Bar */}
+          {/* Human Contact Quick Bar - Only Icons for Phone and Message */}
           <div className="chat-human-bar">
             <span className="chat-human-label">Need a real person?</span>
             <div className="chat-human-options">
-              <a href="tel:08001234567" className="chat-human-pill" title="Call Unlonely Team">
-                <Phone size={13} />
-                <span>0800 123 4567</span>
+              <a 
+                href="tel:08001234567" 
+                className="chat-human-icon-btn" 
+                title="Call our team: 0800 123 4567"
+                aria-label="Call 0800 123 4567"
+              >
+                <Phone size={15} />
               </a>
               <Link 
                 to="/contact" 
-                className="chat-human-pill" 
+                className="chat-human-icon-btn" 
                 onClick={() => setIsOpen(false)}
                 title="Send Message / Email"
+                aria-label="Send message to our team"
               >
-                <Mail size={13} />
-                <span>Contact Team</span>
+                <Mail size={15} />
               </Link>
             </div>
           </div>
 
           {/* Messages Container */}
-          <div className="chat-messages-container">
+          <div className="chat-messages-container" ref={messagesContainerRef}>
             {messages.map((msg) => (
               <div key={msg.id} className={`chat-message-row ${msg.sender === 'user' ? 'user-row' : 'bot-row'}`}>
                 {msg.sender === 'bot' && (
