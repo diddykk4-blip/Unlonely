@@ -108,17 +108,20 @@ const WhoWeSupportDetail = () => {
       {/* Dark Slate Banner: A friendly face could be closer than you think */}
       <section className="container mb-xl">
         <div className="support-feature-banner text-center">
-          <h2>A friendly face could be closer than you think</h2>
-          <p>
-            Experience genuine connection with a trusted, vetted companion who shares your interests.
-          </p>
-          <div className="banner-buttons">
-            <Link to="/find-a-companion" className="btn btn-primary banner-btn-main">
-              Find My Companion
-            </Link>
-            <a href="tel:08001234567" className="btn btn-outline banner-btn-alt">
-              <Phone size={16} /> Speak to Unlonely
-            </a>
+          <div className="support-feature-banner-overlay"></div>
+          <div className="support-feature-banner-content">
+            <h2>A friendly face could be closer than you think</h2>
+            <p>
+              Experience genuine connection with a trusted, vetted companion who shares your interests.
+            </p>
+            <div className="banner-buttons">
+              <Link to="/find-a-companion" className="btn btn-primary banner-btn-main">
+                Find My Companion
+              </Link>
+              <a href="tel:08001234567" className="btn btn-outline banner-btn-alt">
+                <Phone size={16} /> Speak to Unlonely
+              </a>
+            </div>
           </div>
         </div>
       </section>
