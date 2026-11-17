@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -54,6 +54,10 @@ const Navbar = () => {
         </nav>
 
         <div className="nav-buttons-desktop">
+          <a href="tel:08001234567" className="nav-phone-link" title="Call us free">
+            <Phone size={16} className="nav-phone-icon" />
+            <span>0800 123 4567</span>
+          </a>
           <Link to="/contact" className="btn btn-outline">Contact</Link>
           <Link to="/pricing" className="btn btn-primary">Book Now</Link>
         </div>

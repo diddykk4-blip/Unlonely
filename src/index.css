@@ -2,11 +2,12 @@
 
 :root {
   /* Color Palette */
-  --primary-color: #1F3A4B;       /* Soft Deep Blue */
+  --primary-color: #FF6B4A;       /* Vibrant Warm Orange for primary CTA */
+  --brand-slate: #2E4057;         /* Deep Trustworthy Slate Blue */
   --secondary-color: #859C8A;     /* Warm Sage Green */
   --accent-color: #E2C044;        /* Warm Gold */
   --bg-color: #F8F6F2;            /* Warm Off White */
-  --success-color: #859C8A;       /* Soft Green (aligned with secondary for harmony, or a slightly brighter variant) */
+  --success-color: #859C8A;       /* Soft Green */
   --success-light: #E8EFE8;
   --text-primary: #2A2A2A;        /* Dark Charcoal */
   --text-secondary: #5C5C5C;      /* Lighter Charcoal */
@@ -57,7 +58,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--primary-color);
+  color: var(--brand-slate);
   line-height: 1.2;
   margin-bottom: var(--space-sm);
   font-weight: 600;
@@ -108,13 +109,15 @@ img {
 .btn-primary {
   background-color: var(--primary-color);
   color: #fff;
+  border: 2px solid var(--primary-color);
 }
 
 .btn-primary:hover {
-  background-color: #152733; /* Darker primary */
+  background-color: #E65535; /* Deeper vibrant orange */
+  border-color: #E65535;
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 20px rgba(255, 107, 74, 0.35);
 }
 
 .btn-secondary {
@@ -177,4 +180,41 @@ img {
 
 .animate-fade-in {
   animation: fadeIn 0.8s var(--transition-normal) forwards;
+}
+
+/* ==============================================================================
+   GLOBAL MOBILE RESPONSIVE FOUNDATION
+   ============================================================================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  h1 { font-size: clamp(2rem, 7vw, 3rem); }
+  h2 { font-size: clamp(1.6rem, 5.5vw, 2.25rem); }
+  h3 { font-size: clamp(1.2rem, 4.5vw, 1.5rem); }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-large {
+    padding: 1rem 1.75rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 2.75rem 0;
+  }
 }

@@ -1,8 +1,41 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Users, Clock, Heart } from 'lucide-react';
+import { Shield, Users, Clock, Heart, Phone, ArrowRight, ChevronDown } from 'lucide-react';
 import './Home.css';
 
+const HOME_FAQS = [
+  {
+    q: 'Is Unlonely a care agency?',
+    a: 'No. Unlonely is a non-clinical companionship service. We do not provide personal care, medication support, childcare, counselling, clinical services or emergency response.'
+  },
+  {
+    q: 'How are companions checked?',
+    a: 'Every companion completes an Enhanced DBS check, safeguarding training and two reference checks.'
+  },
+  {
+    q: 'How does matching work?',
+    a: 'You tell us about interests, location, preferred way to connect and timing. We then match you with a suitable companion whose Enhanced DBS check, safeguarding training and references are all verified.'
+  },
+  {
+    q: 'What is included in each membership?',
+    a: 'The £11 introductory hour is a one-off companionship hour. Digital Check-Ins starts at £25/month for phone and/or video companionship. Premium In-Person is £260/month with a guaranteed consistent companion. Exact frequency and scheduling are confirmed during your membership conversation.'
+  },
+  {
+    q: 'Can I arrange companionship for someone else?',
+    a: 'Yes. Families and carers can arrange companionship on behalf of someone, with their consent and authority confirmed during the enquiry. Visit our For Families page to learn more.'
+  },
+  {
+    q: 'What happens if I want to cancel?',
+    a: 'There are no joining fees and no long-term contracts. Cancellation and refund details are confirmed during your membership conversation and set out in our membership terms.'
+  }
+];
+
 const Home = () => {
+  const [openFaq, setOpenFaq] = useState(null);
+
+  const toggleFaq = (idx) => {
+    setOpenFaq(openFaq === idx ? null : idx);
+  };
   return (
     <div className="home-page animate-fade-in">
       {/* Hero Section */}
@@ -11,13 +44,35 @@ const Home = () => {
         <div className="container hero-container relative text-center">
           <div className="hero-content">
             <h1 className="hero-title animate-fade-in" style={{ animationDelay: '0.1s' }}>Alone No More</h1>
+            
             <p className="hero-subtitle animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              Get personally matched with a vetted companion for friendly visits, chats, and activities | within 48 hours. Not a care agency.
+              Get personally matched with a vetted companion for friendly visits, chats, and activities within 48 hours. We are not a care agency.
             </p>
-            <div className="hero-actions center-actions animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <Link to="/find-a-companion" className="btn btn-primary btn-large">Find My Companion</Link>
-              <Link to="/become-a-companion" className="btn btn-outline light-outline btn-large">Become a Companion</Link>
+
+            {/* USP Highlight Sub-Badge */}
+            <div className="hero-usp-badge animate-fade-in" style={{ animationDelay: '0.25s' }}>
+              <span><strong>Companionship, not care.</strong> No medical tasks. No uniforms.</span>
             </div>
+
+            <div className="hero-actions center-actions animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <Link to="/find-a-companion" className="btn btn-primary btn-large hero-cta-primary">Find My Companion</Link>
+              <Link to="/become-a-companion" className="btn btn-outline light-outline btn-large hero-cta-secondary">Become a Companion</Link>
+            </div>
+
+            {/* Trust Reassurance Row */}
+            <div className="hero-reassurance-row animate-fade-in" style={{ animationDelay: '0.35s' }}>
+              <span className="reassurance-item">⭐ <strong>4.9/5</strong> Rating</span>
+              <span className="reassurance-dot">•</span>
+              <span className="reassurance-item">🛡️ <strong>DBS Checked</strong></span>
+              <span className="reassurance-dot">•</span>
+              <span className="reassurance-item">❌ <strong>No Contracts</strong></span>
+            </div>
+
+            {/* Phone Reassurance */}
+            <div className="hero-phone-cta animate-fade-in" style={{ animationDelay: '0.38s' }}>
+              <span>Prefer to talk? Call <a href="tel:08001234567" className="hero-phone-number">0800 123 4567</a></span>
+            </div>
+
             <div className="trust-bar animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <span>48 Hour Matching</span>
               <span className="dot">•</span>
@@ -61,6 +116,57 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Who We Support Section */}
+      <section id="who-we-support" className="section who-we-support-section">
+        <div className="container">
+          <div className="text-center support-header">
+            <span className="support-tag">WHO WE SUPPORT</span>
+            <h2 className="support-main-title">Loneliness does not look the same for everyone</h2>
+            <p className="support-main-subtitle">
+              Unlonely also welcomes any adult who wants more genuine, regular human connection.
+            </p>
+          </div>
+
+          <div className="support-cards-grid">
+            {/* Card 1: Older adults */}
+            <div className="support-card">
+              <h3>Older adults</h3>
+              <p>Conversation, continuity and shared interests that help you stay socially connected on your own terms.</p>
+              <Link to="/who-we-support/older-adults" className="support-card-link">
+                Find out more <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* Card 2: Remote workers */}
+            <div className="support-card">
+              <h3>Remote workers</h3>
+              <p>Break the isolation of working from home with flexible phone or video companionship and local group walks.</p>
+              <Link to="/who-we-support/remote-workers" className="support-card-link">
+                Find out more <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* Card 3: New mothers */}
+            <div className="support-card">
+              <h3>New mothers</h3>
+              <p>Adult conversation and connection during a major life transition. Unlonely does not provide childcare or medical advice.</p>
+              <Link to="/who-we-support/new-mothers" className="support-card-link">
+                Find out more <ArrowRight size={16} />
+              </Link>
+            </div>
+
+            {/* Card 4: People living with bereavement */}
+            <div className="support-card">
+              <h3>People living with bereavement</h3>
+              <p>Gentle companionship and shared time — not counselling or grief treatment — at a pace that feels right.</p>
+              <Link to="/who-we-support/bereavement" className="support-card-link">
+                Find out more <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section cta-section text-center">
         <div className="cta-overlay"></div>
@@ -68,6 +174,59 @@ const Home = () => {
           <h2>Ready to find your companion?</h2>
           <p className="cta-subtitle">Join hundreds of families who trust Unlonely for genuine human connection.</p>
           <Link to="/contact" className="btn btn-primary cta-btn">Get in Touch</Link>
+        </div>
+      </section>
+
+      {/* FAQs Section */}
+      <section id="faqs" className="section home-faq-section">
+        <div className="container home-faq-container">
+          <div className="text-center home-faq-header">
+            <span className="faq-tag">QUESTIONS</span>
+            <h2 className="faq-main-title">A friendly face could be closer than you think</h2>
+          </div>
+
+          <div className="home-faq-accordion">
+            {HOME_FAQS.map((faq, idx) => (
+              <div 
+                key={idx} 
+                className={`home-faq-item ${openFaq === idx ? 'open' : ''}`}
+                onClick={() => toggleFaq(idx)}
+              >
+                <div className="home-faq-question">
+                  <h3>{faq.q}</h3>
+                  <ChevronDown size={18} className="home-faq-icon" />
+                </div>
+                {openFaq === idx && (
+                  <div className="home-faq-answer">
+                    <p>{faq.a}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Dark Slate Call-To-Action Banner */}
+      <section className="home-banner-section">
+        <div className="container">
+          <div className="friendly-face-banner text-center">
+            <div className="friendly-face-banner-overlay"></div>
+            <div className="friendly-face-banner-content">
+              <h2>A friendly face could be closer than you think</h2>
+              <p>
+                Experience an initial companionship hour for £11, or talk to us about the membership that fits your life.
+              </p>
+              <div className="friendly-banner-actions">
+                <Link to="/find-a-companion" className="btn btn-primary friendly-btn-primary">
+                  Book Your £11 Introductory Hour
+                </Link>
+                <Link to="/contact" className="btn btn-outline friendly-btn-outline">
+                  Speak to Unlonely
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

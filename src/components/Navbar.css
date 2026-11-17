@@ -25,11 +25,18 @@
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--brand-slate);
+  letter-spacing: -0.02em;
+}
+
+.nav-logo img {
+  height: 40px !important;
+  width: auto;
+  object-fit: contain;
 }
 
 .logo-icon {
@@ -68,6 +75,28 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.nav-phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--brand-slate);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.nav-phone-link:hover {
+  color: var(--primary-color);
+  background-color: rgba(255, 107, 74, 0.08);
+}
+
+.nav-phone-icon {
+  color: var(--primary-color);
 }
 
 .nav-buttons-desktop .btn {

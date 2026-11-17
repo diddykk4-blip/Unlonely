@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -12,10 +13,12 @@ import Contact from './pages/Contact';
 import BecomeCompanion from './pages/BecomeCompanion';
 import FindCompanion from './pages/FindCompanion';
 import Blog from './pages/Blog';
+import WhoWeSupportDetail from './pages/WhoWeSupportDetail';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -24,6 +27,7 @@ function App() {
           <Route path="how-it-works" element={<HowItWorks />} />
           <Route path="pricing" element={<Pricing />} />
           <Route path="companions" element={<Companions />} />
+          <Route path="who-we-support/:slug" element={<WhoWeSupportDetail />} />
           <Route path="safety" element={<Safety />} />
           <Route path="faqs" element={<FAQs />} />
           <Route path="contact" element={<Contact />} />
