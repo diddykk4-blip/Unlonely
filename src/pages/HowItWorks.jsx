@@ -26,7 +26,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="animate-fade-in section">
+    <div className="animate-fade-in inner-page">
       <div className="container">
         <div className="text-center mb-lg">
           <h1>How It Works</h1>

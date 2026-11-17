@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="animate-fade-in section">
+    <div className="animate-fade-in inner-page">
       <div className="container">
         <h1 className="text-center mb-lg">About Unlonely</h1>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>

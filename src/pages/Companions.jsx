@@ -30,7 +30,7 @@ const Companions = () => {
   ];
 
   return (
-    <div className="animate-fade-in section">
+    <div className="animate-fade-in inner-page">
       <div className="container">
         <div className="text-center mb-lg">
           <h1>Meet Our Companions</h1>

@@ -182,6 +182,17 @@ img {
   animation: fadeIn 0.8s var(--transition-normal) forwards;
 }
 
+/* Inner pages: reduced top padding since layout already offsets 80px for the navbar */
+.inner-page {
+  padding: 2.5rem 0 5rem;
+}
+
+@media (max-width: 768px) {
+  .inner-page {
+    padding: 1.5rem 0 3.5rem;
+  }
+}
+
 /* ==============================================================================
    GLOBAL MOBILE RESPONSIVE FOUNDATION
    ============================================================================== */

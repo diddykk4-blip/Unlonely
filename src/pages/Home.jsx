@@ -99,7 +99,7 @@ const Home = () => {
       <section className="section bg-light">
         <div className="container">
           <div className="text-center services-header">
-            <h2>How We Can Help</h2>
+            <h2>Connection that fits real life</h2>
             <p>From a friendly chat over coffee to accompanied museum visits.</p>
           </div>
           <div className="grid-3 services-grid">
