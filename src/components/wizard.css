@@ -23,23 +23,26 @@
 
 .progress-text {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: var(--brand-slate);
+  font-weight: 600;
   white-space: nowrap;
 }
 
 .progress-bar-bg {
   flex-grow: 1;
-  height: 8px;
-  background-color: var(--border-color);
+  height: 9px;
+  background-color: rgba(46, 64, 87, 0.12);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
 
 .progress-bar-fill {
   height: 100%;
-  background-color: var(--accent-color);
+  background-color: var(--brand-slate);
+  background: linear-gradient(90deg, #1F2D3D 0%, #2E4057 55%, #3D5A7D 100%);
   border-radius: var(--radius-full);
   transition: width var(--transition-normal);
+  box-shadow: 0 1px 4px rgba(46, 64, 87, 0.25);
 }
 
 .wizard-title {
