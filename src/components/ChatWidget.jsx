@@ -269,7 +269,7 @@ const getBotResponse = (userText) => {
 
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
   const [messages, setMessages] = useState([INITIAL_GREETING]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -278,6 +278,14 @@ const ChatWidget = () => {
   const messagesContainerRef = useRef(null);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+
+  // Show welcome popup after 10 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 10000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -401,7 +409,7 @@ const ChatWidget = () => {
             aria-label="Open Unlonely Virtual Assistant"
           >
             <div className="chat-launcher-icon-wrapper">
-              <MessageCircle size={28} className="chat-launcher-icon" />
+              <img src="/chatbot-avatar.jpg" alt="Unlonely Assistant" className="chat-launcher-avatar" />
               {hasUnread && <span className="chat-unread-badge" />}
             </div>
             <span className="chat-launcher-tooltip">Chat with us</span>
@@ -416,7 +424,7 @@ const ChatWidget = () => {
           <div className="chat-header">
             <div className="chat-header-info">
               <div className="chat-avatar-wrapper">
-                <img src="/logo.png" alt="Unlonely" className="chat-header-logo" />
+                <img src="/chatbot-avatar.jpg" alt="Unlonely Assistant" className="chat-header-avatar" />
                 <span className="chat-status-dot" title="Online" />
               </div>
               <div className="chat-header-text">
@@ -475,7 +483,7 @@ const ChatWidget = () => {
               <div key={msg.id} className={`chat-message-row ${msg.sender === 'user' ? 'user-row' : 'bot-row'}`}>
                 {msg.sender === 'bot' && (
                   <div className="chat-msg-avatar">
-                    <img src="/logo.png" alt="Unlonely" className="chat-avatar-img" />
+                    <img src="/chatbot-avatar.jpg" alt="Unlonely Assistant" className="chat-avatar-img" />
                   </div>
                 )}
 
@@ -544,7 +552,7 @@ const ChatWidget = () => {
             {isTyping && (
               <div className="chat-message-row bot-row">
                 <div className="chat-msg-avatar">
-                  <img src="/logo.png" alt="Unlonely" className="chat-avatar-img" />
+                  <img src="/chatbot-avatar.jpg" alt="Unlonely Assistant" className="chat-avatar-img" />
                 </div>
                 <div className="chat-bubble bot-bubble typing-bubble">
                   <span className="typing-dot" />
