@@ -48,6 +48,17 @@
   gap: 0.5rem;
 }
 
+.chat-popup-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #10B981;
+  margin-top: 5px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2.5px rgba(16, 185, 129, 0.25);
+  animation: onlinePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 .chat-popup-wave {
   font-size: 1.1rem;
   line-height: 1.2;
@@ -121,7 +132,6 @@
   box-shadow: 0 8px 24px rgba(255, 107, 74, 0.45);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
   padding: 0;
-  overflow: hidden;
 }
 
 .chat-launcher-btn:hover {
@@ -146,6 +156,42 @@
   object-fit: cover;
   object-position: top center;
   display: block;
+}
+
+/* Tiny active / online green indicator dot */
+.chat-online-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #10B981;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+}
+
+.chat-online-dot::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background-color: #10B981;
+  opacity: 0.5;
+  animation: onlinePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  z-index: -1;
+}
+
+@keyframes onlinePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
 }
 
 .chat-launcher-icon {
@@ -248,7 +294,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   flex-shrink: 0;
 }

@@ -279,11 +279,11 @@ const ChatWidget = () => {
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Show welcome popup after 10 seconds
+  // Show welcome popup after 4 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopup(true);
-    }, 10000);
+    }, 4000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -379,6 +379,7 @@ const ChatWidget = () => {
               aria-label="Welcome popup, click to open chat"
             >
               <div className="chat-popup-content">
+                <span className="chat-popup-status-dot" title="Online" />
                 <span className="chat-popup-wave">👋</span>
                 <p className="chat-popup-text">
                   Welcome to Unlonely, how may I assist you?
@@ -410,7 +411,7 @@ const ChatWidget = () => {
           >
             <div className="chat-launcher-icon-wrapper">
               <img src="/chatbot-avatar.jpg" alt="Unlonely Assistant" className="chat-launcher-avatar" />
-              {hasUnread && <span className="chat-unread-badge" />}
+              <span className="chat-online-dot" title="Online - We're here to help" />
             </div>
             <span className="chat-launcher-tooltip">Chat with us</span>
           </button>
