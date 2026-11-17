@@ -35,11 +35,25 @@
 
 /* Hero Banner */
 .support-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center 30%;
   color: #ffffff;
   padding: 4.5rem 0 4rem;
+  overflow: hidden;
+}
+
+.support-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
 }
 
 .support-hero-container {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
 }
 
@@ -49,8 +63,9 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 0.75rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .support-hero-title {
@@ -58,6 +73,7 @@
   font-size: 3rem;
   line-height: 1.15;
   margin-bottom: 1.25rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
 .support-hero-subtitle {
@@ -65,6 +81,7 @@
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.95);
   max-width: 750px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* Body Section with Two Columns */

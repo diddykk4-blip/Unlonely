@@ -28,8 +28,15 @@ const WhoWeSupportDetail = () => {
         </div>
       </div>
 
-      {/* Hero Banner with Teal/Emerald Gradient */}
-      <section className="support-hero" style={{ background: data.gradient }}>
+      {/* Hero Banner with Photo Background + Color Tint Overlay */}
+      <section 
+        className="support-hero" 
+        style={{ backgroundImage: `url(${data.bgImage})` }}
+      >
+        <div 
+          className="support-hero-overlay" 
+          style={{ background: data.gradient }}
+        ></div>
         <div className="container support-hero-container">
           <span className="support-hero-tag">{data.tag}</span>
           <h1 className="support-hero-title">{data.title}</h1>

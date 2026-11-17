@@ -4,7 +4,8 @@ export const WHO_WE_SUPPORT_DATA = {
     tag: 'WHO WE SUPPORT',
     title: 'Companionship for older adults',
     heroSubtitle: 'Conversation, continuity and shared interests that help you stay socially connected on your own terms.',
-    gradient: 'linear-gradient(135deg, #2E6B65 0%, #3B8276 50%, #52A293 100%)',
+    bgImage: '/support-older-adults.jpg',
+    gradient: 'linear-gradient(135deg, rgba(46, 107, 101, 0.85) 0%, rgba(59, 130, 118, 0.76) 50%, rgba(82, 162, 147, 0.80) 100%)',
     howHelpsTitle: 'Companionship that meets you where you are',
     howHelpsDesc: 'Unlonely matches older adults with friendly, vetted companions for genuine conversation and shared time — whether that’s an in-person visit, a regular phone call, a video check-in or a local stroll. We focus on what you enjoy, at a pace that suits you.',
     bullets: [
@@ -38,7 +39,8 @@ export const WHO_WE_SUPPORT_DATA = {
     tag: 'WHO WE SUPPORT',
     title: 'Companionship for remote workers',
     heroSubtitle: 'Break the isolation of working from home with flexible phone check-ins, coffee chats, and local walks.',
-    gradient: 'linear-gradient(135deg, #2D4A60 0%, #3E6382 50%, #5A83A6 100%)',
+    bgImage: '/support-remote-workers.jpg',
+    gradient: 'linear-gradient(135deg, rgba(45, 74, 96, 0.85) 0%, rgba(62, 99, 130, 0.76) 50%, rgba(90, 131, 166, 0.80) 100%)',
     howHelpsTitle: 'Real connection beyond Slack and Zoom',
     howHelpsDesc: 'Working from home offers flexibility, but prolonged isolation can affect mental wellbeing and motivation. Unlonely pairs you with thoughtful companions for lunch-hour walks, coffee conversations, or casual weekly check-ins to help re-anchor your social rhythm.',
     bullets: [
@@ -68,7 +70,8 @@ export const WHO_WE_SUPPORT_DATA = {
     tag: 'WHO WE SUPPORT',
     title: 'Companionship for new mothers',
     heroSubtitle: 'Adult conversation, gentle company, and shared time during a major, often overwhelming life transition.',
-    gradient: 'linear-gradient(135deg, #6B4E71 0%, #85618C 50%, #A27B9B 100%)',
+    bgImage: '/support-new-mothers.jpg',
+    gradient: 'linear-gradient(135deg, rgba(107, 78, 113, 0.85) 0%, rgba(133, 97, 140, 0.76) 50%, rgba(162, 123, 155, 0.80) 100%)',
     howHelpsTitle: 'Supportive presence when you need adult company',
     howHelpsDesc: 'Early motherhood can feel unexpectedly lonely when days blur together and adult conversation becomes rare. Unlonely companions provide a warm, reassuring presence — joining you for pram walks in the park, quiet cups of tea, or simply offering a kind ear.',
     bullets: [
@@ -98,7 +101,8 @@ export const WHO_WE_SUPPORT_DATA = {
     tag: 'WHO WE SUPPORT',
     title: 'Support for people living with bereavement',
     heroSubtitle: 'Gentle companionship and shared presence — not counselling or grief treatment — at a pace that feels right.',
-    gradient: 'linear-gradient(135deg, #3A4B58 0%, #4D6374 50%, #687F91 100%)',
+    bgImage: '/support-bereavement.jpg',
+    gradient: 'linear-gradient(135deg, rgba(58, 75, 88, 0.85) 0%, rgba(77, 99, 116, 0.76) 50%, rgba(104, 127, 145, 0.80) 100%)',
     howHelpsTitle: 'You don’t have to sit in silence alone',
     howHelpsDesc: 'When life changes suddenly after the loss of a partner, family member, or close friend, the quietness of everyday routines can be the hardest part. Unlonely offers quiet, compassionate companionship — sharing a cup of tea, running a small errand together, or just being there.',
     bullets: [
