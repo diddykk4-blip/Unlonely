@@ -105,9 +105,6 @@ const WhoWeSupportDetail = () => {
           </p>
           <div className="support-cta-actions">
             <Link to="/find-a-companion" className="btn btn-primary">Find a Companion</Link>
-            <Link to="/pricing" className="btn btn-outline support-inline-link">
-              View Memberships & Pricing <ArrowRight size={16} />
-            </Link>
           </div>
         </div>
       </section>

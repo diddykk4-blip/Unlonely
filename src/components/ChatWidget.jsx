@@ -152,8 +152,8 @@ const getBotResponse = (userText) => {
   ) {
     return {
       text: "Our pricing depends on the companionship arrangement. Please contact our team for the latest pricing information so we can guide you accurately.",
-      actionLink: '/pricing',
-      actionText: 'View Pricing Information',
+      actionLink: '/contact',
+      actionText: 'Contact Our Team',
       quickReplies: ['Speak to Our Team', 'Find a Companion']
     };
   }

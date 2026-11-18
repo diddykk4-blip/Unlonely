@@ -64,7 +64,7 @@ const HowItWorks = () => {
         </div>
         
         <div className="text-center" style={{ marginTop: 'var(--space-xl)' }}>
-          <Link to="/pricing" className="btn btn-primary">View Pricing & Book</Link>
+          <Link to="/find-a-companion" className="btn btn-primary">Find a Companion</Link>
         </div>
       </div>
     </div>

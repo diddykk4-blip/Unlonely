@@ -27,7 +27,6 @@ const Footer = () => {
             <h3>Company</h3>
             <Link to="/about">About Us</Link>
             <Link to="/services">Services</Link>
-            <Link to="/pricing">Pricing</Link>
             <Link to="/become-companion">Become a Companion</Link>
             <Link to="/blog">Blog & Resources</Link>
           </div>
