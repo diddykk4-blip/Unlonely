@@ -8,10 +8,10 @@ const PrivacyPolicy = () => {
     <div className="privacy-page animate-fade-in">
       <div className="container">
         <header className="privacy-header">
-          <span className="privacy-tag">Data Protection & Privacy</span>
+          <span className="privacy-tag">Data Protection &amp; Privacy</span>
           <h1 className="privacy-title">Privacy Policy</h1>
           <p className="privacy-meta">
-            <strong>Last updated:</strong> November 2026 • Effective Date: November 2026
+            <strong>Last updated:</strong> November 2026 &bull; Effective Date: November 2026
           </p>
         </header>
 
@@ -21,6 +21,28 @@ const PrivacyPolicy = () => {
               At <strong>Unlonely</strong>, we are committed to being transparent about how we collect, use, and protect your personal information. This Privacy Policy explains how we process your personal data in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
             </p>
           </div>
+
+          {/* TABLE OF CONTENTS */}
+          <nav className="privacy-toc" aria-label="Privacy policy sections">
+            <h3>Contents</h3>
+            <ol>
+              <li><a href="#who-we-are">Who We Are</a></li>
+              <li><a href="#information-we-collect">Information We Collect</a></li>
+              <li><a href="#how-we-use-information">How We Use Your Information</a></li>
+              <li><a href="#lawful-bases">Lawful Bases for Processing</a></li>
+              <li><a href="#special-category">Special Category &amp; Criminal Conviction Data</a></li>
+              <li><a href="#additional-information">Optional Additional Information</a></li>
+              <li><a href="#virtual-assistant">Virtual Assistant (Chatbot)</a></li>
+              <li><a href="#data-sharing">How We Share Your Information</a></li>
+              <li><a href="#international-transfers">International Transfers</a></li>
+              <li><a href="#data-retention">How Long We Keep Your Information</a></li>
+              <li><a href="#your-rights">Your Rights</a></li>
+              <li><a href="#cookies">Cookies &amp; Website Technology</a></li>
+              <li><a href="#marketing">Marketing &amp; Communications</a></li>
+              <li><a href="#changes">Changes to This Policy</a></li>
+              <li><a href="#contact-us">Contact Us &amp; Privacy Requests</a></li>
+            </ol>
+          </nav>
 
           {/* 1. Who We Are */}
           <section className="privacy-section" id="who-we-are">
@@ -34,18 +56,18 @@ const PrivacyPolicy = () => {
             <div className="privacy-highlight-box">
               <h4>Data Controller Details</h4>
               <p>
-                For the purposes of applicable data protection law, the data controller of your personal data is:
+                For the purposes of UK data protection law, the data controller responsible for your personal information is:
               </p>
               <ul>
-                <li><strong>Business Name:</strong> Unlonely</li>
+                <li><strong>Trading Name:</strong> Unlonely</li>
                 <li><strong>Legal Entity:</strong> <span className="privacy-placeholder-badge">[Unlonely Legal Entity Name]</span></li>
                 <li><strong>Company Registration Number:</strong> <span className="privacy-placeholder-badge">[Registered in England &amp; Wales No. XXXXXXXX]</span></li>
-                <li><strong>Registered Office:</strong> <span className="privacy-placeholder-badge">[Registered Office Address, London, United Kingdom]</span></li>
-                <li><strong>Designated Data Protection Contact:</strong> <a href="mailto:privacy@unlonely.co.uk">privacy@unlonely.co.uk</a></li>
-                <li><strong>General Inquiries:</strong> <a href="mailto:hello@unlonely.co.uk">hello@unlonely.co.uk</a> | 0800 123 4567</li>
+                <li><strong>Registered Office:</strong> <span className="privacy-placeholder-badge">[Registered Office Address, United Kingdom]</span></li>
+                <li><strong>Data Protection Contact:</strong> <a href="mailto:privacy@unlonely.co.uk">privacy@unlonely.co.uk</a></li>
+                <li><strong>General Enquiries:</strong> <a href="mailto:hello@unlonely.co.uk">hello@unlonely.co.uk</a></li>
               </ul>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: 0 }}>
-                <em>Note: We do not claim certified GDPR compliance status; this document represents our honest and transparent policies, commitments, and procedures under UK data protection law.</em>
+                <em>This document sets out our honest and transparent data handling practices under UK data protection law. We do not make claims of certified compliance status.</em>
               </p>
             </div>
           </section>
@@ -54,293 +76,461 @@ const PrivacyPolicy = () => {
           <section className="privacy-section" id="information-we-collect">
             <h2>2. Information We Collect</h2>
             <p>
-              We only collect personal information that you choose to provide directly to us through our website forms, virtual assistant chat, email correspondence, or telephone conversations. We strictly limit collection to information necessary to arrange or provide social companionship.
+              We only collect personal information that you choose to provide directly to us through our website forms, virtual assistant, email correspondence, or telephone. We strictly limit collection to information necessary to arrange or provide our companionship service.
             </p>
-            
-            <h3>A. Information from Companionship Enquiries (Find a Companion Form)</h3>
+
+            <h3>A. Companionship Enquiries — Find a Companion Form</h3>
+            <p>When you submit a companionship request, we collect:</p>
             <ul>
-              <li><strong>Contact &amp; Identity Details:</strong> First name, last name, email address, telephone number, residential postcode, and whether the enquiry is for yourself or on behalf of someone else.</li>
-              <li><strong>Demographic Information:</strong> Date of birth (to confirm adult age requirements) and pronouns (optional).</li>
-              <li><strong>Emergency Contact Details:</strong> Name and telephone number of a designated emergency contact person.</li>
-              <li><strong>Communication Preferences:</strong> Preferred contact method (e.g. phone call, text/WhatsApp, email) and best time of day to reach you.</li>
-              <li><strong>Companionship Preferences:</strong> Hobbies and interests (e.g. walking, reading, arts, coffee chats), preferred visit frequency (e.g. weekly, monthly), preferred visit duration, preferred meeting locations (e.g. at home, local café/park, phone, video), and ideal visit description.</li>
-              <li><strong>Voluntary Additional Information:</strong> Any non-sensitive personal context you voluntarily share in our optional 500-character additional information field.</li>
-              <li><strong>Voluntarily Disclosed Considerations:</strong> Any accessibility notes or allergies you voluntarily provide to help us plan safe and comfortable visits.</li>
-              <li><strong>Service Understanding:</strong> Confirmation that you understand Unlonely is a companionship service, not a care agency.</li>
+              <li><strong>Contact &amp; Identity:</strong> First name, last name, email address, telephone number, residential postcode, and whether the enquiry is for yourself or on behalf of someone else.</li>
+              <li><strong>Date of Birth:</strong> To confirm you are an adult (18+), or that the person you are enquiring for meets our service requirements.</li>
+              <li><strong>Pronouns (optional):</strong> To help our team communicate respectfully with you or the person receiving companionship.</li>
+              <li><strong>Emergency Contact:</strong> Name and telephone number of a designated emergency contact person.</li>
+              <li><strong>Communication Preferences:</strong> Preferred contact method (phone call, WhatsApp, or email) and best time of day to contact you.</li>
+              <li><strong>Companionship Preferences:</strong> Hobbies and interests, preferred visit frequency, duration, and meeting location (e.g. at home, local caf&eacute;/park, phone or video call).</li>
+              <li><strong>Ideal Visit (optional):</strong> A short description of your ideal visit in three words.</li>
+              <li><strong>Accessibility Needs (optional):</strong> Any information voluntarily shared to help us ensure comfortable visits, such as mobility considerations.</li>
+              <li><strong>Allergies (optional):</strong> Any relevant allergies you choose to share to assist safe visit planning.</li>
+              <li><strong>Optional Additional Information:</strong> Any other context you choose to provide in our free-text field (maximum 500 characters). See <a href="#additional-information">Section 6</a>.</li>
+              <li><strong>Service Confirmation:</strong> Your acknowledgement that Unlonely is a companionship service and not a care agency.</li>
             </ul>
 
-            <h3>B. Information from Companion Applicants (Become a Companion Form)</h3>
+            <h3>B. Companion Applicants — Become a Companion Form</h3>
+            <p>When you apply to become a companion, we collect:</p>
             <ul>
-              <li><strong>Personal Details:</strong> Full legal name, date of birth (must be 18+), National Insurance number, current residential address, phone number, and email address.</li>
-              <li><strong>Transport &amp; Driving Status:</strong> Driving licence and car access details.</li>
-              <li><strong>Suitability &amp; Experience:</strong> Motivation for becoming a companion, previous voluntary or paid experience supporting others, and examples of making someone feel less alone.</li>
-              <li><strong>Skills &amp; Availability:</strong> Languages spoken, personal hobbies/interests, and days/times available.</li>
-              <li><strong>Vetting &amp; Background Declarations:</strong> Consent to an Enhanced Disclosure and Barring Service (DBS) check, contact details and consent for two referees, declaration regarding criminal convictions, and DBS update service participation status.</li>
-              <li><strong>Self-Employment &amp; Accuracy Confirmation:</strong> Declarations of accuracy and understanding of self-employed companion arrangements.</li>
+              <li><strong>Personal Details:</strong> Full legal name, date of birth (must be 18+), National Insurance number, current full residential address, phone number, and email address.</li>
+              <li><strong>Transport:</strong> Whether you hold a valid UK driving licence and have access to a vehicle, or rely on public transport.</li>
+              <li><strong>Motivation &amp; Experience:</strong> Your reasons for applying, any relevant previous paid or voluntary experience, and an example of making someone feel less alone.</li>
+              <li><strong>Practical Skills:</strong> Languages spoken, personal hobbies and interests, and your general availability (e.g. weekday mornings, weekends).</li>
+              <li><strong>Vetting &amp; Background Declarations:</strong> Your consent to an Enhanced Disclosure and Barring Service (DBS) check, your consent for us to contact two referees, your DBS Update Service registration status, and your declaration regarding criminal convictions (see <a href="#special-category">Section 5</a>).</li>
+              <li><strong>Declarations:</strong> Confirmation that all information provided is accurate and that you understand the self-employed nature of companion arrangements.</li>
             </ul>
 
-            <h3>C. Information from General Inquiries &amp; Website Communications</h3>
+            <h3>C. General Enquiries &amp; Contact Form</h3>
             <ul>
               <li><strong>Contact Form:</strong> Full name, email address, topic of interest, and your message.</li>
-              <li><strong>Virtual Assistant Chatbot:</strong> Messages, questions, and preferences voluntarily shared during chat sessions.</li>
-              <li><strong>Telephone &amp; Email Communications:</strong> Records of your communications with our team when you contact us for support or information.</li>
+              <li><strong>Telephone &amp; Email:</strong> Records of your direct communications with our team.</li>
+            </ul>
+
+            <h3>D. What We Do Not Collect</h3>
+            <ul>
+              <li>We do not collect payment card or bank details through this website.</li>
+              <li>We do not deploy tracking pixels, advertising cookies, or behavioural profiling tools.</li>
+              <li>We do not use artificial intelligence or machine learning on your personal data.</li>
+              <li>We do not operate a customer account or login system on this website.</li>
+              <li>We do not ask about medical diagnoses or mental health conditions, and we ask that you do not include such information in your submissions.</li>
             </ul>
           </section>
 
           {/* 3. How We Use Your Information */}
           <section className="privacy-section" id="how-we-use-information">
             <h2>3. How We Use Your Information</h2>
-            <p>
-              We process your personal data for legitimate business purposes under the lawful bases defined in Article 6 of the UK GDPR:
-            </p>
+            <p>We use your personal information only for the following purposes:</p>
             <ul>
-              <li>
-                <strong>Arranging and Delivering Companionship (Contract / Pre-contractual steps — Article 6(1)(b)):</strong> To review your companionship request, understand your conversational interests, and manually identify and introduce a vetted companion suited to your preferences.
-              </li>
-              <li>
-                <strong>Vetting and Safer Recruitment (Legitimate Interests — Article 6(1)(f) / Legal Obligation — Article 6(1)(c)):</strong> To evaluate companion applications, verify identity, check references, and process Enhanced DBS criminal record checks to ensure the safety and trust of our clients and community.
-              </li>
-              <li>
-                <strong>Customer Support and Communications (Contract / Legitimate Interests):</strong> To contact you by email or telephone regarding your enquiry, proposed matches, visit confirmations, administrative updates, or customer service inquiries.
-              </li>
-              <li>
-                <strong>Safeguarding &amp; Vital Interests (Vital Interests — Article 6(1)(d) / Substantial Public Interest):</strong> To respond appropriately in the rare event of an acute safeguarding concern, medical emergency, or immediate threat to personal safety.
-              </li>
-              <li>
-                <strong>Compliance and Dispute Resolution (Legal Obligation — Article 6(1)(c)):</strong> To maintain required financial, accounting, insurance, and tax records, and to respond to lawful regulatory or law enforcement requests.
-              </li>
+              <li><strong>Reviewing and responding to your companionship enquiry</strong> — assessing your request, identifying a suitable companion, and contacting you to discuss next steps.</li>
+              <li><strong>Matching you with a suitable companion</strong> — using your preferences, interests, and availability to identify the best possible match.</li>
+              <li><strong>Processing and assessing companion applications</strong> — reviewing suitability, conducting Enhanced DBS checks, contacting referees, and managing the vetting process.</li>
+              <li><strong>Responding to general enquiries</strong> — replying to messages, questions, or requests submitted via our contact form or by phone.</li>
+              <li><strong>Ensuring safeguarding and visit safety</strong> — using accessibility notes, allergies, and emergency contact details to plan safe and appropriate visits.</li>
+              <li><strong>Improving and maintaining our service</strong> — using aggregate, non-identifiable information to understand how we can improve the experience we offer (legitimate interests).</li>
+              <li><strong>Complying with legal obligations</strong> — meeting our responsibilities under UK employment law, safeguarding legislation, and applicable regulations.</li>
             </ul>
             <p>
-              <em>Marketing Policy:</em> We do not sell your personal data. Marketing consent is <strong>never</strong> a condition of submitting an enquiry or using our service. We only send marketing updates if you have separately and explicitly opted in to receive them.
+              We will not use your information for any purpose incompatible with the purpose for which it was originally collected without informing you first.
             </p>
           </section>
 
-          {/* 4. Optional Additional Information */}
-          <section className="privacy-section" id="optional-additional-information">
-            <h2>4. Optional Additional Information</h2>
+          {/* 4. Lawful Bases */}
+          <section className="privacy-section" id="lawful-bases">
+            <h2>4. Lawful Bases for Processing</h2>
             <p>
-              On our <em>Find a Companion</em> request form, we provide an optional field labelled:
+              Under Article 6 of the UK GDPR, we rely on the following lawful bases for processing your personal data:
             </p>
+            <div className="privacy-table-wrapper">
+              <table className="privacy-table">
+                <thead>
+                  <tr>
+                    <th>Purpose</th>
+                    <th>Lawful Basis</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Reviewing and fulfilling companionship enquiries</td>
+                    <td><strong>Contract / Pre-contractual steps</strong> — Article 6(1)(b)</td>
+                  </tr>
+                  <tr>
+                    <td>Matching clients with companions</td>
+                    <td><strong>Contract / Pre-contractual steps</strong> — Article 6(1)(b)</td>
+                  </tr>
+                  <tr>
+                    <td>Reviewing and processing companion applications</td>
+                    <td><strong>Contract / Pre-contractual steps</strong> — Article 6(1)(b)</td>
+                  </tr>
+                  <tr>
+                    <td>Conducting Enhanced DBS checks and referee checks</td>
+                    <td><strong>Legal obligation</strong> — Article 6(1)(c) and <strong>Legitimate interests</strong> — Article 6(1)(f) (safeguarding)</td>
+                  </tr>
+                  <tr>
+                    <td>Responding to general enquiries</td>
+                    <td><strong>Legitimate interests</strong> — Article 6(1)(f)</td>
+                  </tr>
+                  <tr>
+                    <td>Safeguarding and visit safety planning</td>
+                    <td><strong>Legitimate interests</strong> — Article 6(1)(f)</td>
+                  </tr>
+                  <tr>
+                    <td>Retaining records for legal or regulatory purposes</td>
+                    <td><strong>Legal obligation</strong> — Article 6(1)(c)</td>
+                  </tr>
+                  <tr>
+                    <td>Optional pronouns, accessibility notes, allergies</td>
+                    <td><strong>Consent</strong> — Article 6(1)(a) (you choose to provide this; it is not required)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* 5. Special Category and Criminal Conviction Data */}
+          <section className="privacy-section" id="special-category">
+            <h2>5. Special Category &amp; Criminal Conviction Data</h2>
+
+            <h3>A. Accessibility and Health-Related Disclosures (Client Enquiries)</h3>
+            <p>
+              Our Find a Companion form includes optional fields for accessibility needs and allergies. Where you choose to share information that may touch on health or disability, we treat this with the highest level of care. This information is used solely to plan safe and appropriate visits and is accessible only to authorised Unlonely staff.
+            </p>
+            <p>
+              We ask that you share only information directly relevant to your companionship request. We do not ask for medical diagnoses, clinical history, or mental health details, and we request that you do not include such information in your submission.
+            </p>
+            <p>
+              Where health-related information is voluntarily disclosed, we rely on <strong>Article 9(2)(a) UK GDPR (explicit consent)</strong> for the specific purpose stated, combined with <strong>Schedule 1, Part 1, Paragraph 1 of the Data Protection Act 2018</strong>.
+            </p>
+
+            <h3>B. Criminal Conviction Data (Companion Applications)</h3>
             <div className="privacy-highlight-box">
-              <p style={{ margin: 0 }}>
-                <strong>Label:</strong> Anything else you'd like us to know? (Optional)<br />
-                <strong>Purpose:</strong> To allow you to communicate specific conversational topics, social preferences, or personality considerations that help our team arrange a compatible match.
+              <p>
+                Our Become a Companion application includes a question asking applicants to disclose any criminal convictions not covered by the Rehabilitation of Offenders Act 1974.
+              </p>
+              <p>
+                Criminal conviction and offence data is subject to additional protections under <strong>Article 10 of the UK GDPR</strong>, which restricts its processing to situations authorised by UK law. We collect this data solely to fulfil our duty of care and safeguarding responsibilities to the people who use our service.
+              </p>
+              <p>
+                Processing criminal conviction data under Article 10 requires both a lawful basis under Article 6 of the UK GDPR and a specific condition from Schedule 1 of the Data Protection Act 2018. We are in the process of confirming the precise Schedule 1 condition applicable to our operations with qualified legal advisers.
+              </p>
+              <p>
+                <strong>Schedule 1, Part 2, Paragraph 18</strong> (safeguarding of children and of individuals at risk) may be relevant to our context, as Unlonely provides companionship to individuals who may include vulnerable adults. However, Paragraph 18 carries specific requirements that must be met for it to apply:
+              </p>
+              <ul>
+                <li>Processing must be <em>necessary</em> for protecting an individual from neglect or physical, mental, or emotional harm.</li>
+                <li>Where the person being protected is an adult (aged 18 or over), there must be reasonable cause to suspect they have needs for care and support, are experiencing or at risk of harm, and are unable to protect themselves as a result of those needs.</li>
+                <li>Processing must generally occur without the data subject's consent, or where obtaining consent would prejudice the safeguarding purpose — meaning it does not automatically apply to data an applicant provides voluntarily during an application process.</li>
+                <li>An <strong>Appropriate Policy Document (APD)</strong> must be in place, as required by Schedule 1, Part 4 of the DPA 2018.</li>
+              </ul>
+              <p>
+                <em>We are seeking qualified UK privacy and legal advice to confirm the applicable Schedule 1 condition(s) and to prepare any required Appropriate Policy Document before this section is finalised.</em>
+              </p>
+              <p>
+                Regardless of the specific legal basis confirmed, criminal conviction information disclosed during the application process:
+              </p>
+              <ul>
+                <li>Is accessible only to authorised Unlonely staff responsible for vetting decisions.</li>
+                <li>Is never shared with clients or third parties except where required by law or regulatory obligation.</li>
+                <li>Is retained only for the duration of the application and vetting process, plus any legally required period thereafter.</li>
+                <li>Is assessed individually in the context of the role and does not automatically disqualify an applicant.</li>
+              </ul>
+              <p>
+                An Enhanced DBS check is also conducted through the Disclosure and Barring Service (a UK government body) for all approved companions. This check is a separate process governed by DBS's own privacy framework.
               </p>
             </div>
-            <p>
-              <strong>Data Minimisation &amp; Character Limit:</strong>
-            </p>
-            <ul>
-              <li>This field is strictly optional; you may leave it blank without affecting your ability to find a companion.</li>
-              <li>We enforce a maximum character limit of <strong>500 characters</strong>, accompanied by a live counter, to encourage concise, relevant details.</li>
-              <li>Submissions exceeding 500 characters are prevented on the website and rejected during data validation.</li>
-              <li>Unnecessary leading and trailing whitespace is automatically trimmed before storage.</li>
-              <li><strong>Guidance:</strong> Please only share information relevant to your companionship preferences. <strong>Please avoid sharing sensitive medical, psychological, or private personal data unless strictly necessary to accommodate a practical visit need.</strong></li>
-            </ul>
           </section>
 
-          {/* 5. Sensitive Personal Information */}
-          <section className="privacy-section" id="sensitive-personal-information">
-            <h2>5. Sensitive Personal Information (Special Category Data)</h2>
+          {/* 6. Optional Additional Information */}
+          <section className="privacy-section" id="additional-information">
+            <h2>6. Optional Additional Information Field</h2>
             <p>
-              Under UK GDPR (Article 9), certain types of data are classified as "special category" data, including information concerning health, medical conditions, racial or ethnic origin, religious beliefs, or sexual orientation.
+              Our Find a Companion form includes an optional free-text field: <em>&ldquo;Anything else you&rsquo;d like us to know?&rdquo;</em> (maximum 500 characters).
             </p>
             <p>
-              <strong>Our Policy:</strong>
+              This field is entirely optional and exists solely to allow you to provide context that helps us find you the right companion — for example, your preferred topics of conversation, your personality, or specific preferences about how you like to socialise.
             </p>
-            <ul>
-              <li>Unlonely does <strong>not</strong> specifically request medical records, psychological assessments, or clinical data through its general enquiry fields. We provide social companionship, not healthcare or clinical care.</li>
-              <li>Where a client or carer voluntarily discloses an accessibility requirement (e.g. step-free access) or an allergy (e.g. pet hair or food allergies), we use this information exclusively to ensure practical visit safety and companion compatibility.</li>
-              <li>Where special category personal data needs to be processed to deliver companionship safely, Unlonely will establish the appropriate UK GDPR Article 6 lawful basis and Article 9 condition (such as explicit consent under Article 9(2)(a), or safeguarding/substantial public interest under Article 9(2)(g) and Schedule 1 of the Data Protection Act 2018) before processing it.</li>
-              <li><strong>No Assumed Consent:</strong> We do <strong>not</strong> claim or presume that users have provided explicit consent to the processing of special category personal data simply by submitting a general website enquiry form. Any formal processing of sensitive data will be handled through direct consultation with appropriate safeguards.</li>
-            </ul>
+            <div className="privacy-highlight-box">
+              <strong>Please only share information directly relevant to your companionship request.</strong>
+              <p style={{ marginBottom: 0, marginTop: '0.5rem' }}>
+                Avoid including sensitive medical or personal information. We do not need and do not ask for details about medical conditions, disabilities, mental health diagnoses, or clinical history. If information of this nature is shared, we will handle it with the same confidentiality as other sensitive data.
+              </p>
+            </div>
           </section>
 
-          {/* 6. How We Share Your Information */}
-          <section className="privacy-section" id="how-we-share-information">
-            <h2>6. How We Share Your Information</h2>
+          {/* 7. Virtual Assistant */}
+          <section className="privacy-section" id="virtual-assistant">
+            <h2>7. Our Virtual Assistant (Chatbot)</h2>
             <p>
-              We do not sell, rent, or trade your personal information to third parties for advertising or commercial purposes. We share personal data only in the following limited circumstances:
+              Our website includes a virtual assistant chatbot to help visitors learn about Unlonely and navigate to the right part of our service.
+            </p>
+            <p>
+              <strong>Important:</strong> Our virtual assistant is a fully rule-based chatbot. It:
             </p>
             <ul>
-              <li>
-                <strong>With Matched Companions:</strong> Once a proposed companion match has been mutually discussed and agreed with you, we share relevant contact information and companionship preferences with the companion so visits can take place.
-              </li>
-              <li>
-                <strong>With Essential Service Providers (Data Processors):</strong> We use trusted third-party providers who assist our technical and operational infrastructure, including secure cloud database hosting (Supabase, operating under strict security protocols), encrypted business email infrastructure, and accredited umbrella bodies for processing DBS vetting checks. All providers are bound by confidentiality and data processing obligations.
-              </li>
-              <li>
-                <strong>With Safeguarding Authorities or Emergency Services:</strong> Where there is an urgent risk of harm, medical emergency, or safeguarding concern, we may share essential information with healthcare professionals, emergency services, or local authority safeguarding teams in the vital interests of the individual.
-              </li>
-              <li>
-                <strong>Legal &amp; Regulatory Obligations:</strong> When required by UK law, court order, or competent regulatory authority.
-              </li>
+              <li>Does <strong>not</strong> use artificial intelligence, machine learning, or large language models.</li>
+              <li>Does <strong>not</strong> transmit any conversation data to external servers or third parties.</li>
+              <li>Does <strong>not</strong> store conversation history in any database — all chat history is held only in your browser&rsquo;s temporary memory and is cleared when you close or refresh the page.</li>
+              <li>Responds only to pre-defined questions and topics using fixed, locally-stored rules.</li>
             </ul>
-          </section>
-
-          {/* 7. Email Communications and Data Access */}
-          <section className="privacy-section" id="email-communications">
-            <h2>7. Email Communications and Data Access</h2>
             <p>
-              Unlonely currently operates as a hands-on, human-matched service without an automated customer dashboard or public client portal.
+              If you share personal information during a chat session (such as your name or circumstances), this information is not retained by us and is not accessible to Unlonely staff. If you wish to make a formal enquiry, please use our Find a Companion form or Contact page.
             </p>
-            <ul>
-              <li>
-                <strong>How Inquiries are Handled:</strong> Website enquiries, companionship requests, companion applications, and contact messages are received and managed through authorized, password-protected business email accounts (e.g. <code>hello@unlonely.co.uk</code>, <code>privacy@unlonely.co.uk</code>) operated by designated Unlonely team members.
-              </li>
-              <li>
-                <strong>Restricted Access:</strong> Access to applicant and client information is strictly restricted to authorized staff members who require the information to perform matching, vetting, or client care functions.
-              </li>
-              <li>
-                <strong>Email Transmission Security:</strong> While our business email systems employ standard Transport Layer Security (TLS) encryption, transmission over public networks is not guaranteed to be completely secure. We strongly advise you not to send bank details, passwords, or detailed medical records via unencrypted standard email.
-              </li>
-            </ul>
           </section>
 
-          {/* 8. Data Storage and Security */}
-          <section className="privacy-section" id="data-storage-and-security">
-            <h2>8. Data Storage and Security</h2>
+          {/* 8. Data Sharing */}
+          <section className="privacy-section" id="data-sharing">
+            <h2>8. How We Share Your Information</h2>
             <p>
-              We implement proportionate technical and organizational safeguards designed to protect personal information against accidental or unlawful destruction, loss, alteration, or unauthorized disclosure:
+              We do not sell, rent, or trade your personal information. We share your information only in the limited circumstances described below.
             </p>
-            <ul>
-              <li><strong>Encryption in Transit:</strong> All website traffic and form submissions are protected using Transport Layer Security (HTTPS / TLS 1.3).</li>
-              <li><strong>Database Protection:</strong> Backend database tables utilize Row Level Security (RLS) policies. Public website visitors possess insert-only permissions for their own submissions and cannot view, read, or edit submissions made by other individuals.</li>
-              <li><strong>Access Control:</strong> Administrative access to backend databases and business email accounts requires strong authentication, multi-factor verification where supported, and is limited on a need-to-know basis.</li>
-              <li><strong>Realistic Assessment:</strong> While we implement rigorous procedures, no electronic storage or internet transmission can be guaranteed 100% secure. We continually evaluate our data protection and security practices.</li>
-            </ul>
+
+            <h3>Data Processors</h3>
+            <p>
+              We use a small number of trusted third-party services to operate our website and store your submissions securely. These organisations act as <strong>data processors</strong> on our behalf and are contractually obligated to handle your data only as instructed by us and in compliance with applicable data protection law.
+            </p>
+            <div className="privacy-table-wrapper">
+              <table className="privacy-table">
+                <thead>
+                  <tr>
+                    <th>Provider</th>
+                    <th>Role</th>
+                    <th>What They Process</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Supabase</strong></td>
+                    <td>Cloud database provider</td>
+                    <td>Secure storage of form submissions (companionship enquiries, companion applications, contact messages). See <a href="#international-transfers">Section 9</a> for data location.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Hostinger</strong></td>
+                    <td>Domain name registrar</td>
+                    <td>Registration of the unlonely.co.uk domain name only. Hostinger does not host the website or process visitor personal data on our behalf.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>GitHub</strong></td>
+                    <td>Source code repository</td>
+                    <td>Hosts the website source code. GitHub does not receive or process visitor personal data submitted through the website.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Disclosure and Barring Service (DBS)</h3>
+            <p>
+              For approved companion applicants, we initiate an Enhanced DBS check through the UK Disclosure and Barring Service, a UK government body. This involves sharing the applicant&rsquo;s personal details with the DBS for the purpose of the background check. The DBS operates under its own statutory privacy framework.
+            </p>
+
+            <h3>Referees</h3>
+            <p>
+              With the applicant&rsquo;s explicit consent (provided during the application process), we contact two referees — one of whom should be a recent employer or organisation where the applicant has volunteered. We share only the applicant&rsquo;s name and the nature of the reference request.
+            </p>
+
+            <h3>Legal Disclosure</h3>
+            <p>
+              We may disclose personal information to law enforcement, regulatory bodies, or courts where we are legally required to do so, or where we believe disclosure is necessary to protect the safety of a person.
+            </p>
+
+            <h3>No Other Sharing</h3>
+            <p>
+              We do not share personal information with marketing companies, data brokers, advertisers, or other third parties.
+            </p>
           </section>
 
-          {/* 9. How Long We Keep Your Information */}
+          {/* 9. International Transfers */}
+          <section className="privacy-section" id="international-transfers">
+            <h2>9. International Data Transfers</h2>
+            <p>
+              Your form submissions are stored in Supabase, a cloud database platform. Supabase&rsquo;s infrastructure is provided by Amazon Web Services (AWS). Supabase supports data hosting in multiple regions, including within the UK and EEA.
+            </p>
+            <p>
+              <strong>Data region:</strong> <span className="privacy-placeholder-badge">[Client action required: confirm in Supabase Dashboard → Project Settings → General → Region]</span>
+            </p>
+            <p>
+              If the project is hosted in a UK or EEA region (such as EU West London or EU West Ireland), no international transfer takes place. If the project is hosted outside the UK and EEA (for example, in a US region), it would constitute an international transfer under UK GDPR. In that case, Supabase provides appropriate safeguards through standard contractual clauses (SCCs) or the UK International Data Transfer Agreement (IDTA). We will update this section once the project region has been confirmed.
+            </p>
+            <p>
+              Hostinger, which provides domain name registration for unlonely.co.uk, is headquartered in Lithuania and operates within the European Economic Area (EEA). The UK has an adequacy decision in respect of the EEA, meaning transfers to EEA-based organisations are considered to provide an adequate level of data protection.
+            </p>
+            <p>
+              If you have questions about international transfers or would like details of the safeguards in place, please contact us at <a href="mailto:privacy@unlonely.co.uk">privacy@unlonely.co.uk</a>.
+            </p>
+          </section>
+
+          {/* 10. Data Retention */}
           <section className="privacy-section" id="data-retention">
-            <h2>9. How Long We Keep Your Information (Data Retention Framework)</h2>
+            <h2>10. How Long We Keep Your Information</h2>
             <p>
-              We adhere to the UK GDPR principle of storage limitation. We retain personal information only for as long as necessary to fulfill the purposes for which it was gathered, in line with our operational retention schedule:
+              We retain personal information only for as long as is necessary for the purposes for which it was collected, or as required by law. Our defined retention schedule is as follows:
             </p>
-
             <div className="privacy-table-wrapper">
               <table className="privacy-table">
                 <thead>
                   <tr>
                     <th>Data Category</th>
                     <th>Retention Period</th>
-                    <th>Reasoning / Basis</th>
+                    <th>Reason &amp; Justification</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><strong>General Enquiries (no service commenced)</strong></td>
-                    <td>Reviewed and deleted after 12 months of inactivity</td>
-                    <td>Allows sufficient time for follow-up questions while ensuring timely deletion of non-active data.</td>
+                    <td><strong>Unsuccessful client enquiries</strong></td>
+                    <td>12 months after last contact</td>
+                    <td>To respond to follow-up questions, reference matching history if you contact us again, and resolve any disputes.</td>
                   </tr>
                   <tr>
-                    <td><strong>Incomplete Form Submissions</strong></td>
-                    <td>Reviewed and deleted after 12 months of inactivity</td>
-                    <td>Disposed of once it is evident the user is not proceeding with an arrangement.</td>
+                    <td><strong>Active clients</strong></td>
+                    <td>Retained while the companionship relationship continues</td>
+                    <td>Necessary to deliver our companionship service and maintain up-to-date preferences and safety contacts, subject to applicable legal requirements.</td>
                   </tr>
                   <tr>
-                    <td><strong>Active Client &amp; Companion Records</strong></td>
-                    <td>Duration of active service relationship</td>
-                    <td>Required to administer ongoing companionship, scheduling, and safety.</td>
+                    <td><strong>Former clients</strong></td>
+                    <td>Retained only as long as necessary for documented business and legal purposes</td>
+                    <td>To satisfy statutory obligations, insurance conditions, accounting records, and dispute resolution.</td>
                   </tr>
                   <tr>
-                    <td><strong>Former Client &amp; Companion Records</strong></td>
-                    <td>Up to 6 years following service termination</td>
-                    <td>Contractual, legal claim defense, insurance, and HMRC accounting compliance (Limitation Act 1980).</td>
+                    <td><strong>Unsuccessful companion applications</strong></td>
+                    <td>12 months after the application decision</td>
+                    <td>To allow time to respond to candidate queries or appeals and maintain an audit record of vetting decisions.</td>
                   </tr>
                   <tr>
-                    <td><strong>Unsuccessful Companion Applications</strong></td>
-                    <td>Up to 12 months from application date</td>
-                    <td>Handling potential queries, vetting disputes, or candidate reapplications.</td>
+                    <td><strong>Active &amp; former companions</strong></td>
+                    <td>Duration of engagement, plus 6 years following termination</td>
+                    <td>To comply with UK statutory accounting, HMRC, contractual record-keeping, and safeguarding accountability.</td>
                   </tr>
                   <tr>
-                    <td><strong>Deletion &amp; Erasure Requests</strong></td>
-                    <td>Assessed and actioned within 1 calendar month</td>
-                    <td>Actioned in compliance with statutory UK GDPR erasure obligations.</td>
+                    <td><strong>General contact messages</strong></td>
+                    <td>Up to 12 months from receipt</td>
+                    <td>To maintain communication history and handle relevant follow-up correspondence.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-
             <p>
-              <strong>Exceptions:</strong> Information may be retained beyond standard periods where an active legal claim, statutory reporting obligation, insurance investigation, or ongoing safeguarding inquiry requires it. We do not retain personal information indefinitely.
+              At the end of the applicable retention period, records are securely deleted. If you request deletion of your information before these periods elapse, we will assess your request under UK GDPR rights and confirm whether any statutory retention obligations require us to maintain specific records.
             </p>
           </section>
 
-          {/* 10. Your Data Protection Rights */}
+          {/* 11. Your Rights */}
           <section className="privacy-section" id="your-rights">
-            <h2>10. Your Data Protection Rights</h2>
+            <h2>11. Your Rights</h2>
             <p>
-              Under UK data protection law (UK GDPR and the Data Protection Act 2018), you have specific legal rights regarding the personal information we hold about you:
+              Under UK GDPR and the Data Protection Act 2018, you have the following rights in relation to your personal information:
             </p>
             <ul>
-              <li><strong>Right to be informed:</strong> You have the right to be provided with clear, transparent, and easily understandable information about how we use your data (as set out in this policy).</li>
-              <li><strong>Right of access (Subject Access Request):</strong> You have the right to request a copy of the personal data we hold about you, together with information on how it is processed.</li>
-              <li><strong>Right to rectification:</strong> You have the right to ask us to correct inaccurate personal data or complete incomplete information.</li>
-              <li><strong>Right to erasure ('Right to be forgotten'):</strong> You have the right to request that we delete your personal data where there is no compelling legal reason for its continued processing.</li>
-              <li><strong>Right to restriction of processing:</strong> You have the right to request that we temporarily suspend the processing of your data under specific conditions (e.g. while an accuracy dispute is investigated).</li>
-              <li><strong>Right to data portability:</strong> Where applicable, you may request the transfer of your personal data in a structured, commonly used format.</li>
-              <li><strong>Right to object:</strong> You have the right to object to processing that is based on our legitimate interests or direct marketing.</li>
-              <li><strong>Right to withdraw consent:</strong> Where we rely on your consent to process your information, you have the right to withdraw that consent at any time.</li>
+              <li><strong>Right of access:</strong> You may request a copy of the personal information we hold about you (also known as a Subject Access Request or SAR). We will respond within one calendar month of receiving your verified request.</li>
+              <li><strong>Right to rectification:</strong> You may request that we correct any inaccurate or incomplete personal information we hold about you.</li>
+              <li><strong>Right to erasure:</strong> You may request that we delete your personal information where it is no longer necessary for the purpose it was collected, or where you withdraw consent (and no other lawful basis applies).</li>
+              <li><strong>Right to restriction:</strong> You may request that we suspend processing of your data in certain circumstances, for example while an accuracy dispute is investigated.</li>
+              <li><strong>Right to data portability:</strong> Where processing is based on consent or contract and carried out by automated means, you may request a copy of your data in a structured, commonly used, machine-readable format.</li>
+              <li><strong>Right to object:</strong> You may object to processing based on our legitimate interests. We will cease processing unless we can demonstrate compelling legitimate grounds that override your interests.</li>
+              <li><strong>Right to withdraw consent:</strong> Where we rely on your consent to process information (e.g. optional fields such as pronouns, accessibility needs), you may withdraw that consent at any time. Withdrawal does not affect the lawfulness of processing carried out before withdrawal.</li>
             </ul>
 
             <div className="privacy-highlight-box">
-              <h4>How to Exercise Your Rights</h4>
+              <h4>How to Submit a Privacy Request</h4>
               <p>
-                To exercise any of these rights, please email our team at <a href="mailto:privacy@unlonely.co.uk">privacy@unlonely.co.uk</a> or call <strong>0800 123 4567</strong>. We respond to all verified requests free of charge within one calendar month.
+                To exercise any of the rights above, please contact us by one of the following methods:
+              </p>
+              <ul>
+                <li><strong>Email:</strong> <a href="mailto:privacy@unlonely.co.uk">privacy@unlonely.co.uk</a> (preferred — please include &ldquo;Privacy Request&rdquo; in the subject line)</li>
+                <li><strong>Post:</strong> <span className="privacy-placeholder-badge">[Registered Office Address, United Kingdom]</span> marked &ldquo;Data Protection Request&rdquo;</li>
+              </ul>
+              <p>
+                We may ask you to verify your identity before processing your request. All verified requests are handled free of charge. We will respond within <strong>one calendar month</strong> of receiving your request. Where a request is complex or numerous, we may extend this by up to two additional months — we will notify you if this applies.
               </p>
               <p style={{ marginBottom: 0 }}>
-                <strong>Right to Complain to the Regulator:</strong> If you believe we have not handled your personal information in accordance with data protection law, you have the right to lodge a complaint with the UK supervisory authority:
+                <strong>Right to complain to the regulator:</strong> If you believe we have not handled your personal information lawfully, you have the right to lodge a complaint with the UK supervisory authority:
                 <br /><br />
-                <strong>Information Commissioner's Office (ICO)</strong><br />
+                <strong>Information Commissioner&rsquo;s Office (ICO)</strong><br />
                 Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF<br />
-                Helpline: 0303 123 1113 | Website: <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk <ExternalLink size={14} style={{ display: 'inline', verticalAlign: 'middle' }} /></a>
+                Helpline: 0303 123 1113<br />
+                Website: <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk <ExternalLink size={14} style={{ display: 'inline', verticalAlign: 'middle' }} /></a>
               </p>
             </div>
           </section>
 
-          {/* 11. Cookies and Website Analytics */}
+          {/* 12. Cookies */}
           <section className="privacy-section" id="cookies">
-            <h2>11. Cookies and Website Analytics</h2>
+            <h2>12. Browser Storage &amp; Website Technology</h2>
             <p>
-              Our website uses strictly necessary functional cookies and local browser storage to provide core site functionality, such as:
+              Our website is a client-side React application. It does <strong>not</strong> set browser cookies. It does <strong>not</strong> use <code>localStorage</code> or <code>sessionStorage</code> in its own application code.
+            </p>
+            <p>
+              Form progress (such as your answers while completing the Find a Companion or Become a Companion wizard) is held in <strong>React component state only</strong> — that is, in-memory in your browser tab. This data is never written to disk and is lost entirely if you close or refresh the page.
+            </p>
+            <p>
+              The virtual assistant chat history is similarly held in-memory only and is cleared when you close or reload the page.
+            </p>
+            <p>
+              The Supabase JavaScript library used to submit your form data includes internal session-management code that may use <code>localStorage</code> for authenticated user sessions. Because Unlonely does not operate a user login or account system, this code path is not activated and no Supabase session data is written to your browser storage.
+            </p>
+            <p>
+              <strong>We do not deploy:</strong>
             </p>
             <ul>
-              <li>Preserving your multi-step form progress while completing the Find a Companion or Become a Companion wizard.</li>
-              <li>Maintaining chat window state in our Virtual Assistant widget.</li>
-              <li>Basic security and session management.</li>
+              <li>Any cookies (session, persistent, tracking, or analytical)</li>
+              <li>Third-party advertising or marketing scripts</li>
+              <li>Behavioural tracking or cross-site profiling technologies</li>
+              <li>Website analytics tools (such as Google Analytics or similar)</li>
+              <li>Social media pixels or tracking scripts</li>
             </ul>
             <p>
-              We do <strong>not</strong> deploy third-party advertising cookies, behavioural cross-site tracking pixels, or invasive profiling tools. Any website performance metrics collected are anonymized and used solely to ensure site reliability and responsiveness.
+              No personal data is transmitted to third parties through the browser. The only external network request made by this website is the submission of your completed form directly to our secure Supabase database when you click Submit.
+            </p>
+            <p>
+              If we introduce any persistent storage, cookies, or analytics tools in the future, this policy will be updated and, where required by law, your consent will be sought in advance.
             </p>
           </section>
 
-          {/* 12. Changes to This Privacy Policy */}
+          {/* 13. Marketing */}
+          <section className="privacy-section" id="marketing">
+            <h2>13. Marketing &amp; Communications</h2>
+            <p>
+              We do not send unsolicited marketing communications. We will only contact you in connection with your enquiry or application, or in direct response to your request for information.
+            </p>
+            <p>
+              We do not share your contact details with third parties for marketing purposes, and we do not engage in email marketing campaigns, SMS marketing, or automated promotional communications.
+            </p>
+            <p>
+              If we ever introduce marketing communications in the future, we will only do so with your explicit opt-in consent, and we will provide a clear and simple way to opt out at any time.
+            </p>
+          </section>
+
+          {/* 14. Changes */}
           <section className="privacy-section" id="changes">
-            <h2>12. Changes to This Privacy Policy</h2>
+            <h2>14. Changes to This Privacy Policy</h2>
             <p>
-              We may update this Privacy Policy from time to time to reflect operational, legal, or regulatory developments. When updates are published, the "Last updated" date at the top of this page will be revised accordingly.
+              We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other operational developments. When material updates are made, the &ldquo;Last updated&rdquo; date at the top of this page will be revised accordingly.
             </p>
             <p>
-              We encourage you to review this page periodically to stay informed about how we are protecting your data.
+              We encourage you to review this page periodically. Where changes are significant, we will take reasonable steps to draw them to your attention.
             </p>
           </section>
 
-          {/* 13. Contact Us */}
+          {/* 15. Contact Us */}
           <section className="privacy-section" id="contact-us">
-            <h2>13. Contact Us</h2>
+            <h2>15. Contact Us &amp; Privacy Requests</h2>
             <p>
-              If you have any questions about this Privacy Policy, your personal information, or wish to make a data protection request, please contact us:
+              If you have any questions about this Privacy Policy, your personal information, or wish to submit a data protection request, please contact us:
             </p>
-            
+
             <div className="privacy-contact-card">
-              <p><strong>Unlonely Data Protection Contact</strong></p>
+              <p><strong>Unlonely — Data Protection Contact</strong></p>
               <p><strong>Legal Entity:</strong> <span className="privacy-placeholder-badge">[Unlonely Legal Entity Name]</span></p>
-              <p><strong>Email:</strong> <a href="mailto:privacy@unlonely.co.uk">privacy@unlonely.co.uk</a></p>
-              <p><strong>General Support Email:</strong> <a href="mailto:hello@unlonely.co.uk">hello@unlonely.co.uk</a></p>
-              <p><strong>Safeguarding Inquiries:</strong> <a href="mailto:safeguarding@unlonely.co.uk">safeguarding@unlonely.co.uk</a></p>
-              <p><strong>Telephone:</strong> 0800 123 4567 (Mon–Fri 9am–5pm)</p>
-              <p><strong>Postal Address:</strong> <span className="privacy-placeholder-badge">[Registered Office Address, London, United Kingdom]</span></p>
+              <p><strong>Privacy &amp; Data Requests:</strong> <a href="mailto:privacy@unlonely.co.uk">privacy@unlonely.co.uk</a></p>
+              <p><strong>General Support:</strong> <a href="mailto:hello@unlonely.co.uk">hello@unlonely.co.uk</a></p>
+              <p><strong>Safeguarding:</strong> <a href="mailto:safeguarding@unlonely.co.uk">safeguarding@unlonely.co.uk</a></p>
+              <p><strong>Postal Address:</strong> <span className="privacy-placeholder-badge">[Registered Office Address, United Kingdom]</span> (marked &ldquo;Data Protection Request&rdquo;)</p>
+              <p style={{ marginBottom: 0, fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+                We respond to all verified data protection requests within one calendar month, free of charge.
+              </p>
             </div>
           </section>
 
