@@ -1,15 +1,30 @@
 import React from 'react';
 import './wizard.css';
 
-export const TextInput = ({ label, name, value, onChange, error, type = 'text', required = false, optional = false }) => (
+export const TextInput = ({ 
+  label, 
+  name, 
+  value, 
+  onChange, 
+  error, 
+  type = 'text', 
+  required = false, 
+  optional = false,
+  placeholder,
+  supportingText 
+}) => (
   <div className="form-group">
     <label className="form-label" htmlFor={name}>
       {label} {optional && <span className="form-label-optional">(Optional)</span>}
     </label>
+    {supportingText && (
+      <p className="form-supporting-text">{supportingText}</p>
+    )}
     <input
       id={name}
       name={name}
       type={type}
+      placeholder={placeholder}
       className={`form-input ${error ? 'error' : ''}`}
       value={value}
       onChange={onChange}

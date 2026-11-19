@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { CheckCircle2, AlertTriangle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { CheckCircle2, AlertTriangle, ShieldCheck } from 'lucide-react';
 import WizardLayout from '../components/WizardLayout';
 import { TextInput, SelectInput, CheckboxGroup, RadioGroup, SingleCheckbox, TextArea } from '../components/FormElements';
 import { submitApplication } from '../services/api';
@@ -81,7 +82,6 @@ const BecomeCompanion = () => {
       case 1:
         return formData.fullName.trim() !== '' && 
                formData.dob !== '' && isValidAge(formData.dob) &&
-               formData.niNumber.trim() !== '' &&
                formData.address.trim() !== '' &&
                formData.phone.trim() !== '' &&
                formData.email.trim() !== '' &&
@@ -172,7 +172,6 @@ const BecomeCompanion = () => {
                 </span>
               )}
             </div>
-            <TextInput label="National Insurance number" name="niNumber" value={formData.niNumber} onChange={handleChange} required />
             <TextArea label="Current address & postcode" name="address" value={formData.address} onChange={handleChange} required rows={3} />
             
             <div className="grid-2">
@@ -228,6 +227,36 @@ const BecomeCompanion = () => {
       case 4:
         return (
           <>
+            <div className="vetting-notice" style={{
+              padding: '1rem 1.25rem',
+              marginBottom: '1.5rem',
+              backgroundColor: '#F8F9FA',
+              borderLeft: '4px solid var(--brand-slate, #1F2D3D)',
+              borderRadius: 'var(--radius-sm, 4px)',
+              fontSize: '0.875rem',
+              color: 'var(--text-primary)',
+              lineHeight: '1.55'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                <ShieldCheck size={18} color="var(--brand-slate, #1F2D3D)" />
+                <h4 style={{ margin: 0, fontSize: '0.95rem', color: 'var(--brand-slate, #1F2D3D)' }}>
+                  Vetting &amp; Background Information Notice
+                </h4>
+              </div>
+              <p style={{ margin: '0 0 0.5rem 0' }}>
+                Unlonely is dedicated to the safety and wellbeing of the people we support. All background vetting information is held in strict confidence, accessed solely by authorised vetting personnel, and evaluated individually on a case-by-case basis.
+              </p>
+              <p style={{ margin: '0 0 0.5rem 0' }}>
+                Under the Rehabilitation of Offenders Act 1974, you should only disclose criminal convictions, cautions, or reprimands that you are legally required to disclose. A previous conviction does not automatically disqualify you from becoming a companion.
+              </p>
+              <p style={{ margin: 0, fontSize: '0.825rem', color: 'var(--text-secondary)' }}>
+                For further details on how criminal conviction data is processed and retained under UK GDPR, please see our{' '}
+                <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-slate, #1F2D3D)', textDecoration: 'underline', fontWeight: 500 }}>
+                  Privacy Policy
+                </Link>.
+              </p>
+            </div>
+
             <RadioGroup 
               label="Consent to Enhanced DBS check?" name="dbsConsent" 
               value={formData.dbsConsent} onChange={handleChange}
@@ -256,6 +285,7 @@ const BecomeCompanion = () => {
                 <TextArea 
                   label="Please provide details" name="convictionDetails" 
                   value={formData.convictionDetails} onChange={handleChange} required 
+                  supportingText="All disclosures are assessed confidentially and individually in the context of the role."
                 />
               </div>
             )}

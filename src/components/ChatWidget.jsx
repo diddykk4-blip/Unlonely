@@ -27,7 +27,7 @@ const QUICK_OPTIONS = [
 const INITIAL_GREETING = {
   id: 'msg-1',
   sender: 'bot',
-  text: "Hello! Welcome to Unlonely. 😊\n\nI'm your virtual assistant, and I'm here to help you learn more about our companionship service.\n\nAre you looking for companionship for yourself, a family member or someone else? Or would you simply like to know more about how Unlonely works?",
+  text: "Hello! Welcome to Unlonely. 😊\n\nI'm your virtual assistant (Automated assistant • Messages are not saved), and I'm here to help you learn more about our companionship service.\n\nAre you looking for companionship for yourself, a family member or someone else? Or would you simply like to know more about how Unlonely works?",
   quickReplies: QUICK_OPTIONS,
   timestamp: new Date()
 };
@@ -430,7 +430,7 @@ const ChatWidget = () => {
               </div>
               <div className="chat-header-text">
                 <h3 className="chat-header-title">Unlonely Assistant</h3>
-                <span className="chat-header-tagline">Alone no more • Virtual Support</span>
+                <span className="chat-header-tagline">Automated assistant • Messages are not saved</span>
               </div>
             </div>
 

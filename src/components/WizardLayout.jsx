@@ -65,12 +65,19 @@ const WizardLayout = ({
           </button>
         </div>
 
-        {currentStep === totalSteps && (
-          <p className="wizard-privacy-notice">
-            By submitting this form, you acknowledge that your information will be handled in accordance with our{' '}
-            <Link to="/privacy-policy">Privacy Policy</Link>.
-          </p>
-        )}
+        <p className="wizard-privacy-notice">
+          {currentStep === totalSteps ? (
+            <>
+              By submitting this form, you acknowledge that your information will be handled in accordance with our{' '}
+              <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>.
+            </>
+          ) : (
+            <>
+              Your personal data is handled securely in accordance with our{' '}
+              <Link to="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>.
+            </>
+          )}
+        </p>
       </div>
     </div>
   );

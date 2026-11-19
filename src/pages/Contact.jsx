@@ -157,6 +157,9 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                   />
+                  <p className="form-helper-text" style={{ fontSize: '0.825rem', color: 'var(--text-secondary)', marginTop: '0.35rem', lineHeight: '1.4' }}>
+                    Please avoid including sensitive health information or financial details in general enquiries.
+                  </p>
                 </div>
 
                 <button 
