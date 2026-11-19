@@ -46,12 +46,12 @@ const Home = () => {
             <h1 className="hero-title animate-fade-in" style={{ animationDelay: '0.1s' }}>Alone No More</h1>
             
             <p className="hero-subtitle animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              Get personally matched with a vetted companion for friendly visits, chats, and activities within 48 hours. We are not a care agency.
+              Get personally matched with a vetted companion for friendly visits, chats, and activities within 48 hours. We are not a medical agency.
             </p>
 
             {/* USP Highlight Sub-Badge */}
             <div className="hero-usp-badge animate-fade-in" style={{ animationDelay: '0.25s' }}>
-              <span><strong>Companionship, not care.</strong> No medical tasks. No uniforms.</span>
+              <span><strong>Companionship, not just care.</strong> No medical tasks. No uniforms.</span>
             </div>
 
             <div className="hero-actions center-actions animate-fade-in" style={{ animationDelay: '0.3s' }}>
