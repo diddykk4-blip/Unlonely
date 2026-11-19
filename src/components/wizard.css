@@ -277,10 +277,22 @@
   box-shadow: var(--shadow-sm);
 }
 
+.selectable-card:focus-visible {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.25);
+}
+
+.selectable-card:active {
+  border-color: var(--primary-color);
+  background-color: rgba(255, 107, 74, 0.08);
+  transform: translateY(0);
+}
+
 .selectable-card.selected {
-  border-color: var(--accent-color);
-  background-color: rgba(226, 192, 68, 0.05); /* very light accent */
-  box-shadow: 0 0 0 2px var(--accent-color);
+  border-color: var(--primary-color);
+  background-color: rgba(255, 107, 74, 0.06);
+  box-shadow: 0 0 0 2px var(--primary-color);
 }
 
 .selectable-card-icon {
@@ -288,7 +300,7 @@
 }
 
 .selectable-card.selected .selectable-card-icon {
-  color: var(--accent-color);
+  color: var(--primary-color);
 }
 
 .selectable-card-label {
