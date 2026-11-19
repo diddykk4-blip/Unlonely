@@ -589,7 +589,7 @@ const ChatWidget = () => {
 
           {/* Reassurance Micro-Footer */}
           <div className="chat-micro-footer">
-            <span>Non-clinical companionship • <Link to="/safety" onClick={() => setIsOpen(false)}>Safeguarding</Link></span>
+            <span>Non-clinical companionship • <Link to="/safety" onClick={() => setIsOpen(false)}>Safeguarding</Link> • <Link to="/privacy-policy" onClick={() => setIsOpen(false)}>Privacy</Link></span>
           </div>
         </div>
       )}

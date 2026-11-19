@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './wizard.css';
 
 const WizardLayout = ({ 
@@ -63,6 +64,13 @@ const WizardLayout = ({
             {isSubmitting ? 'Submitting...' : (currentStep === totalSteps ? submitLabel : 'Continue')}
           </button>
         </div>
+
+        {currentStep === totalSteps && (
+          <p className="wizard-privacy-notice">
+            By submitting this form, you acknowledge that your information will be handled in accordance with our{' '}
+            <Link to="/privacy-policy">Privacy Policy</Link>.
+          </p>
+        )}
       </div>
     </div>
   );

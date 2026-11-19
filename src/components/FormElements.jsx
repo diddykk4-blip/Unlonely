@@ -19,21 +19,49 @@ export const TextInput = ({ label, name, value, onChange, error, type = 'text', 
   </div>
 );
 
-export const TextArea = ({ label, name, value, onChange, error, required = false, rows = 4 }) => (
-  <div className="form-group">
-    <label className="form-label" htmlFor={name}>{label}</label>
-    <textarea
-      id={name}
-      name={name}
-      className={`form-textarea ${error ? 'error' : ''}`}
-      value={value}
-      onChange={onChange}
-      required={required}
-      rows={rows}
-    />
-    {error && <span className="error-message">{error}</span>}
-  </div>
-);
+export const TextArea = ({ 
+  label, 
+  name, 
+  value = '', 
+  onChange, 
+  error, 
+  required = false, 
+  rows = 4,
+  placeholder,
+  maxLength,
+  showCharCount = false,
+  supportingText
+}) => {
+  const currentLength = (value || '').length;
+
+  return (
+    <div className="form-group">
+      <div className="form-label-row">
+        <label className="form-label" htmlFor={name}>{label}</label>
+        {showCharCount && maxLength && (
+          <span className="char-count" aria-live="polite">
+            {currentLength}/{maxLength}
+          </span>
+        )}
+      </div>
+      {supportingText && (
+        <p className="form-supporting-text">{supportingText}</p>
+      )}
+      <textarea
+        id={name}
+        name={name}
+        className={`form-textarea ${error ? 'error' : ''}`}
+        value={value}
+        onChange={onChange}
+        required={required}
+        rows={rows}
+        placeholder={placeholder}
+        maxLength={maxLength}
+      />
+      {error && <span className="error-message">{error}</span>}
+    </div>
+  );
+};
 
 export const SelectInput = ({ label, name, value, onChange, options, error, required = false }) => (
   <div className="form-group">

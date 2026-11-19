@@ -1,7 +1,51 @@
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Phone, Mail, Clock, CheckCircle2 } from 'lucide-react';
+import { submitContactInquiry } from '../services/api';
 import './Contact.css';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    interest: 'Booking for myself',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage('');
+    
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setErrorMessage('Please fill in all required fields.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await submitContactInquiry({
+        fullName: formData.name,
+        email: formData.email,
+        interest: formData.interest,
+        message: formData.message
+      });
+      setIsSuccess(true);
+    } catch (err) {
+      console.error('Contact submission error');
+      setErrorMessage('Something went wrong sending your message. Please try again or call us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="animate-fade-in section">
       <div className="container">
@@ -48,34 +92,89 @@ const Contact = () => {
 
           <div className="contact-form-container">
             <h2 className="mb-md">Send us a Message</h2>
-            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-              <div className="form-group">
-                <label htmlFor="name">Full Name</label>
-                <input type="text" id="name" placeholder="John Doe" />
+            
+            {isSuccess ? (
+              <div className="contact-success-state text-center" style={{ padding: '2rem 1rem' }}>
+                <CheckCircle2 size={54} color="var(--primary-color)" style={{ margin: '0 auto 1rem' }} />
+                <h3>Thank you for reaching out!</h3>
+                <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
+                  We have received your message and a member of our team will get back to you shortly.
+                </p>
               </div>
-              
-              <div className="form-group">
-                <label htmlFor="email">Email Address</label>
-                <input type="email" id="email" placeholder="john@example.com" />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="interest">I am interested in...</label>
-                <select id="interest">
-                  <option>Booking for myself</option>
-                  <option>Booking for a family member</option>
-                  <option>Becoming a companion</option>
-                  <option>Other enquiry</option>
-                </select>
-              </div>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit}>
+                {errorMessage && (
+                  <div className="form-error-alert" style={{ color: '#d32f2f', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
+                    {errorMessage}
+                  </div>
+                )}
 
-              <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea id="message" rows="5" placeholder="How can we help you?"></textarea>
-              </div>
+                <div className="form-group">
+                  <label htmlFor="name">Full Name</label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    placeholder="John Doe" 
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label htmlFor="email">Email Address</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="john@example.com" 
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label htmlFor="interest">I am interested in...</label>
+                  <select 
+                    id="interest"
+                    value={formData.interest}
+                    onChange={handleChange}
+                  >
+                    <option value="Booking for myself">Booking for myself</option>
+                    <option value="Booking for a family member">Booking for a family member</option>
+                    <option value="Becoming a companion">Becoming a companion</option>
+                    <option value="Other enquiry">Other enquiry</option>
+                  </select>
+                </div>
 
-              <button type="submit" className="btn btn-primary w-100">Send Message</button>
-            </form>
+                <div className="form-group">
+                  <label htmlFor="message">Message</label>
+                  <textarea 
+                    id="message" 
+                    rows={5} 
+                    placeholder="How can we help you?"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="btn btn-primary w-100" 
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+
+                <p className="contact-privacy-notice" style={{ fontSize: '0.825rem', color: 'var(--text-secondary)', textAlign: 'center', marginTop: '0.75rem', lineHeight: '1.45' }}>
+                  By submitting this form, you acknowledge that your information will be handled in accordance with our{' '}
+                  <Link to="/privacy-policy" style={{ color: 'var(--brand-slate)', textDecoration: 'underline', fontWeight: 500 }}>
+                    Privacy Policy
+                  </Link>.
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </div>

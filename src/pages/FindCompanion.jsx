@@ -54,6 +54,9 @@ const FindCompanion = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+    if (name === 'additionalInfo' && value.length > 500) {
+      return; // Enforce 500 character limit on frontend input
+    }
     setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' && name === 'confirmService' ? checked : value
@@ -86,7 +89,8 @@ const FindCompanion = () => {
       case 4:
         return formData.visitFrequency !== '' && formData.visitLength !== '' && formData.meetLocation !== '';
       case 5:
-        return formData.confirmService === true;
+        const isAdditionalInfoValid = (formData.additionalInfo || '').trim().length <= 500;
+        return formData.confirmService === true && isAdditionalInfoValid;
       default:
         return false;
     }
@@ -100,12 +104,22 @@ const FindCompanion = () => {
     if (currentStep < 5) {
       setCurrentStep(prev => prev + 1);
     } else {
+      // Frontend validation check
+      const trimmedAdditionalInfo = (formData.additionalInfo || '').trim();
+      if (trimmedAdditionalInfo.length > 500) {
+        alert("Additional information must be 500 characters or fewer.");
+        return;
+      }
+
       // Submit
       setIsSubmitting(true);
       try {
         const payload = {
           formType: "client",
-          fields: formData
+          fields: {
+            ...formData,
+            additionalInfo: trimmedAdditionalInfo
+          }
         };
         await submitApplication('client_intake', payload);
         setIsSuccess(true);
@@ -245,10 +259,14 @@ const FindCompanion = () => {
         return (
           <>
             <TextArea 
-              label="Tell us anything that would help us find the perfect companion." 
+              label="Anything else you'd like us to know? (Optional)" 
               name="additionalInfo" 
               value={formData.additionalInfo} 
               onChange={handleChange} 
+              placeholder="Tell us anything else that might help us understand your companionship preferences."
+              supportingText="Please only share information relevant to your companionship request. Avoid including sensitive medical or personal information unless necessary."
+              maxLength={500}
+              showCharCount={true}
               rows={5}
             />
             

@@ -13,6 +13,7 @@ import BecomeCompanion from './pages/BecomeCompanion';
 import FindCompanion from './pages/FindCompanion';
 import Blog from './pages/Blog';
 import WhoWeSupportDetail from './pages/WhoWeSupportDetail';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
           <Route path="join" element={<BecomeCompanion />} />
           <Route path="find-a-companion" element={<FindCompanion />} />
           <Route path="match" element={<FindCompanion />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="privacy" element={<PrivacyPolicy />} />
           <Route path="blog" element={<Blog />} />
         </Route>
       </Routes>
