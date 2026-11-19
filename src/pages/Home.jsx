@@ -46,7 +46,7 @@ const Home = () => {
             <h1 className="hero-title animate-fade-in" style={{ animationDelay: '0.1s' }}>Alone No More</h1>
             
             <p className="hero-subtitle animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              Get personally matched with a vetted companion for friendly visits, chats, and activities within 48 hours. We are not a medical agency.
+              Get personally matched with a vetted companion for friendly visits, chats, and activities within 48 hours.
             </p>
 
             {/* USP Highlight Sub-Badge */}
