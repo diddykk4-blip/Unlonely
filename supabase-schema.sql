@@ -105,39 +105,18 @@ CREATE POLICY "Public can submit contact messages"
     TO anon, authenticated
     WITH CHECK (true);
 
--- 5. AUTHENTICATED ADMIN ACCESS
-CREATE POLICY "Authenticated admins can view client requests"
-    ON public.client_requests
-    FOR SELECT
-    TO authenticated
-    USING (true);
+-- 5. HARDENED ACCESS CONTROL (DEFENSE-IN-DEPTH)
+-- In accordance with UK GDPR security principles and unlonely's operational structure:
+-- There is no public user login or customer portal. Submissions are strictly write-only for visitors.
+-- Authorised staff view and manage submissions directly via the Supabase Cloud Dashboard (as postgres/service_role).
+-- Broad "authenticated" SELECT and UPDATE policies have been removed so no user can view records via REST API.
 
-CREATE POLICY "Authenticated admins can update client requests"
-    ON public.client_requests
-    FOR UPDATE
-    TO authenticated
-    USING (true);
+-- Explicitly grant only INSERT to anon and authenticated
+GRANT INSERT ON public.client_requests TO anon, authenticated;
+GRANT INSERT ON public.companion_applications TO anon, authenticated;
+GRANT INSERT ON public.contact_messages TO anon, authenticated;
 
-CREATE POLICY "Authenticated admins can view companion applications"
-    ON public.companion_applications
-    FOR SELECT
-    TO authenticated
-    USING (true);
-
-CREATE POLICY "Authenticated admins can update companion applications"
-    ON public.companion_applications
-    FOR UPDATE
-    TO authenticated
-    USING (true);
-
-CREATE POLICY "Authenticated admins can view contact messages"
-    ON public.contact_messages
-    FOR SELECT
-    TO authenticated
-    USING (true);
-
-CREATE POLICY "Authenticated admins can update contact messages"
-    ON public.contact_messages
-    FOR UPDATE
-    TO authenticated
-    USING (true);
+-- Explicitly revoke SELECT, UPDATE, DELETE from anon and authenticated
+REVOKE SELECT, UPDATE, DELETE ON public.client_requests FROM anon, authenticated;
+REVOKE SELECT, UPDATE, DELETE ON public.companion_applications FROM anon, authenticated;
+REVOKE SELECT, UPDATE, DELETE ON public.contact_messages FROM anon, authenticated;
