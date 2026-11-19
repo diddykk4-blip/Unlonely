@@ -306,7 +306,12 @@ const PrivacyPolicy = () => {
                   <tr>
                     <td><strong>Supabase</strong></td>
                     <td>Cloud database provider</td>
-                    <td>Secure storage of form submissions (companionship enquiries, companion applications, contact messages). See <a href="#international-transfers">Section 9</a> for data location.</td>
+                    <td>Secure storage of form submissions (companionship enquiries, companion applications, contact messages). Data is hosted in the United Kingdom (AWS London - eu-west-2). See <a href="#international-transfers">Section 9</a>.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Netlify</strong></td>
+                    <td>Website hosting platform</td>
+                    <td>Serves the static website files and processes standard server-level access logs (IP addresses and request timestamps).</td>
                   </tr>
                   <tr>
                     <td><strong>Hostinger</strong></td>
@@ -347,13 +352,16 @@ const PrivacyPolicy = () => {
           <section className="privacy-section" id="international-transfers">
             <h2>9. International Data Transfers</h2>
             <p>
-              Your form submissions are stored in Supabase, a cloud database platform. Supabase&rsquo;s infrastructure is provided by Amazon Web Services (AWS). Supabase supports data hosting in multiple regions, including within the UK and EEA.
+              Your form submissions are stored in Supabase, a cloud database platform whose underlying infrastructure is provided by Amazon Web Services (AWS).
             </p>
             <p>
-              <strong>Data region:</strong> <span className="privacy-placeholder-badge">[Client action required: confirm in Supabase Dashboard → Project Settings → General → Region]</span>
+              <strong>Data location:</strong> Our Supabase database instance is provisioned in the <strong>AWS London region (eu-west-2)</strong> within the United Kingdom. As a result, your form submissions are stored domestically within the UK, and no international transfer of database records takes place outside the UK.
             </p>
             <p>
-              If the project is hosted in a UK or EEA region (such as EU West London or EU West Ireland), no international transfer takes place. If the project is hosted outside the UK and EEA (for example, in a US region), it would constitute an international transfer under UK GDPR. In that case, Supabase provides appropriate safeguards through standard contractual clauses (SCCs) or the UK International Data Transfer Agreement (IDTA). We will update this section once the project region has been confirmed.
+              Our website is hosted on Netlify, which operates a global content delivery network (CDN) to ensure fast and reliable loading of static web assets. Netlify complies with UK data protection laws and provides appropriate transfer mechanisms (including standard contractual clauses and UK data bridge safeguards) for server-level access logs.
+            </p>
+            <p>
+              All website typography and font assets are hosted directly on our own web server, ensuring no external font requests or IP disclosures are made to third-party providers.
             </p>
             <p>
               Hostinger, which provides domain name registration for unlonely.co.uk, is headquartered in Lithuania and operates within the European Economic Area (EEA). The UK has an adequacy decision in respect of the EEA, meaning transfers to EEA-based organisations are considered to provide an adequate level of data protection.
