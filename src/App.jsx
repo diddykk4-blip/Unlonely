@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
@@ -38,8 +38,8 @@ function App() {
           <Route path="match" element={<FindCompanion />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="privacy" element={<PrivacyPolicy />} />
-          <Route path="recovery" element={<Recovery />} />
-          <Route path="post-op-recovery" element={<Recovery />} />
+          <Route path="recovery" element={<Navigate to="/#recovery" replace />} />
+          <Route path="post-op-recovery" element={<Navigate to="/#recovery" replace />} />
           <Route path="blog" element={<Blog />} />
         </Route>
       </Routes>
