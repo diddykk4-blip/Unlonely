@@ -38,8 +38,8 @@ function App() {
           <Route path="match" element={<FindCompanion />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="privacy" element={<PrivacyPolicy />} />
-          <Route path="recovery" element={<Navigate to="/#recovery" replace />} />
-          <Route path="post-op-recovery" element={<Navigate to="/#recovery" replace />} />
+          <Route path="recovery" element={<Recovery />} />
+          <Route path="post-op-recovery" element={<Recovery />} />
           <Route path="blog" element={<Blog />} />
         </Route>
       </Routes>
