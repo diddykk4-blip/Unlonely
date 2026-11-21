@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Users, Clock, Heart, Phone, ArrowRight, ChevronDown, Star, ShieldCheck, X } from 'lucide-react';
+import { Shield, Users, Clock, Heart, Phone, ArrowRight, ChevronDown, Star, ShieldCheck, X, Sparkles } from 'lucide-react';
 import './Home.css';
 
 const HOME_FAQS = [
@@ -90,6 +90,32 @@ const Home = () => {
               <span>GDPR Protected</span>
               <span className="dot">•</span>
               <span>UK Wide</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Post-Op Recovery Spotlight Strip (Immediately After Hero) */}
+      <section className="hero-recovery-strip">
+        <div className="container">
+          <div className="hero-recovery-card animate-fade-in">
+            <div className="hero-recovery-content">
+              <div className="hero-recovery-tag">
+                <Sparkles size={14} />
+                <span>Specialist Short-Term Support</span>
+              </div>
+              <h3 className="hero-recovery-heading">
+                Recovering from surgery? <span>We're here for the first few weeks at home.</span>
+              </h3>
+              <p className="hero-recovery-subtext">
+                Practical, non-medical companionship, light meal prep, prescription collection &amp; lifts to physiotherapy.
+              </p>
+            </div>
+            <div className="hero-recovery-action">
+              <Link to="/recovery" className="hero-recovery-btn">
+                <span>Explore Post-Op Recovery</span>
+                <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </div>

@@ -843,3 +843,119 @@
   }
 }
 
+/* ==========================================================================
+   Hero Recovery Post-Op Spotlight Strip (Immediately After Hero)
+   ========================================================================== */
+.hero-recovery-strip {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF8F5 100%);
+  border-bottom: 1px solid rgba(255, 107, 74, 0.15);
+  padding: 1.25rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-recovery-card {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(255, 107, 74, 0.28);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem 1.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: 0 4px 20px rgba(255, 107, 74, 0.08);
+  transition: all var(--transition-normal);
+}
+
+.hero-recovery-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 6px 24px rgba(255, 107, 74, 0.14);
+  transform: translateY(-1px);
+}
+
+.hero-recovery-content {
+  flex: 1;
+}
+
+.hero-recovery-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #FFF0EB;
+  color: var(--primary-color);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.35rem;
+  border: 1px solid rgba(255, 107, 74, 0.2);
+}
+
+.hero-recovery-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--brand-slate);
+  margin: 0 0 0.2rem 0;
+  line-height: 1.35;
+}
+
+.hero-recovery-heading span {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.hero-recovery-subtext {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.hero-recovery-action {
+  flex-shrink: 0;
+}
+
+.hero-recovery-btn {
+  background: var(--primary-color);
+  color: #FFFFFF !important;
+  font-size: 0.925rem;
+  font-weight: 600;
+  padding: 0.7rem 1.35rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 3px 12px rgba(255, 107, 74, 0.25);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.hero-recovery-btn:hover {
+  background: #E05333;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(255, 107, 74, 0.35);
+}
+
+@media (max-width: 860px) {
+  .hero-recovery-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.25rem;
+  }
+  
+  .hero-recovery-action {
+    width: 100%;
+  }
+  
+  .hero-recovery-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
