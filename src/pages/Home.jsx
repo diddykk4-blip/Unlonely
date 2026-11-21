@@ -371,31 +371,31 @@ const Home = () => {
               </div>
               <ul className="scope-items">
                 <li>
-                  <CheckCircle2 size={22} className="icon-check" />
+                  <CheckCircle2 size={18} className="icon-check" />
                   <div>
                     <strong>Friendly Company:</strong> Sit with you, watch TV, play cards, or just chat over a warm cup of tea.
                   </div>
                 </li>
                 <li>
-                  <CheckCircle2 size={22} className="icon-check" />
+                  <CheckCircle2 size={18} className="icon-check" />
                   <div>
                     <strong>Light Meal Prep:</strong> Make a simple sandwich, heat up comforting soup, or prepare hot tea and coffee.
                   </div>
                 </li>
                 <li>
-                  <CheckCircle2 size={22} className="icon-check" />
+                  <CheckCircle2 size={18} className="icon-check" />
                   <div>
                     <strong>Errands:</strong> Collect prescriptions from your pharmacy or pop out for a small grocery shop.
                   </div>
                 </li>
                 <li>
-                  <CheckCircle2 size={22} className="icon-check" />
+                  <CheckCircle2 size={18} className="icon-check" />
                   <div>
                     <strong>Transport:</strong> Drive you safely to and from your physiotherapy or clinic appointments (agreed in advance).
                   </div>
                 </li>
                 <li>
-                  <CheckCircle2 size={22} className="icon-check" />
+                  <CheckCircle2 size={18} className="icon-check" />
                   <div>
                     <strong>Welfare Checks:</strong> A welcoming, reassuring face to make sure you are comfortable and settling in smoothly.
                   </div>
@@ -405,30 +405,30 @@ const Home = () => {
 
             <div className="scope-card scope-dont">
               <div className="scope-badge badge-dont">
-                <XCircle size={18} />
+                <XCircle size={16} />
                 <span>What We Do NOT Do (Non-Medical)</span>
               </div>
               <ul className="scope-items">
                 <li>
-                  <XCircle size={22} className="icon-cross" />
+                  <XCircle size={18} className="icon-cross" />
                   <div>
                     <strong>We are not a care agency.</strong> We provide social companionship and practical non-regulated assistance.
                   </div>
                 </li>
                 <li>
-                  <XCircle size={22} className="icon-cross" />
+                  <XCircle size={18} className="icon-cross" />
                   <div>
                     <strong>No personal care:</strong> We do not assist with bathing, washing, dressing, or toileting.
                   </div>
                 </li>
                 <li>
-                  <XCircle size={22} className="icon-cross" />
+                  <XCircle size={18} className="icon-cross" />
                   <div>
                     <strong>No medication management:</strong> We do not administer or organise prescribed pharmaceutical regimens.
                   </div>
                 </li>
                 <li>
-                  <XCircle size={22} className="icon-cross" />
+                  <XCircle size={18} className="icon-cross" />
                   <div>
                     <strong>No clinical or nursing care:</strong> We do not provide wound dressing, clinical monitoring, or injections.
                   </div>
@@ -517,7 +517,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="text-center" style={{ marginTop: '2rem' }}>
+            <div className="text-center" style={{ marginTop: '1.25rem' }}>
               <span className="packages-note">
                 * All prices include VAT where applicable and travel within a 5-mile radius.
               </span>
@@ -525,7 +525,7 @@ const Home = () => {
           </div>
 
           {/* Section: Dedicated Recovery Support Intake Form */}
-          <div id="recovery-enquiry-form" className="recovery-form-section" style={{ marginTop: '3.5rem' }}>
+          <div id="recovery-enquiry-form" className="recovery-form-section" style={{ marginTop: '2rem' }}>
             <h3 style={{ fontSize: '1.6rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
               Recovery Support Enquiry
             </h3>

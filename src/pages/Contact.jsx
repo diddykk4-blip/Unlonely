@@ -72,7 +72,7 @@ const Contact = () => {
               <Mail className="info-icon" />
               <div>
                 <h4>Email</h4>
-                <p>hello@unlonely.co.uk</p>
+                <p><a href="mailto:support@unlonely.uk" style={{ color: 'inherit', textDecoration: 'none' }}>support@unlonely.uk</a></p>
               </div>
             </div>
 

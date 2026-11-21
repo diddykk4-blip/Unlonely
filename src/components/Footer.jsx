@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <Mail size={18} />
-              <span>hello@unlonely.co.uk</span>
+              <a href="mailto:support@unlonely.uk" style={{ color: 'inherit', textDecoration: 'none' }}>support@unlonely.uk</a>
             </div>
             <div className="contact-item">
               <MapPin size={18} />

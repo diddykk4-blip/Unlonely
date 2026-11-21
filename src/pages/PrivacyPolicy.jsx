@@ -63,8 +63,8 @@ const PrivacyPolicy = () => {
                 <li><strong>Legal Entity:</strong> <span className="privacy-placeholder-badge">[Unlonely Legal Entity Name]</span></li>
                 <li><strong>Company Registration Number:</strong> <span className="privacy-placeholder-badge">[Registered in England &amp; Wales No. XXXXXXXX]</span></li>
                 <li><strong>Registered Office:</strong> <span className="privacy-placeholder-badge">[Registered Office Address, United Kingdom]</span></li>
-                <li><strong>Data Protection Contact:</strong> <a href="mailto:privacy@unlonely.co.uk">privacy@unlonely.co.uk</a></li>
-                <li><strong>General Enquiries:</strong> <a href="mailto:hello@unlonely.co.uk">hello@unlonely.co.uk</a></li>
+                <li><strong>Data Protection Contact:</strong> <a href="mailto:privacy@unlonely.uk">privacy@unlonely.uk</a></li>
+                <li><strong>General Enquiries:</strong> <a href="mailto:support@unlonely.uk">support@unlonely.uk</a></li>
               </ul>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: 0 }}>
                 <em>This document sets out our honest and transparent data handling practices under UK data protection law. We do not make claims of certified compliance status.</em>
@@ -112,13 +112,11 @@ const PrivacyPolicy = () => {
               <li><strong>Telephone &amp; Email:</strong> Records of your direct communications with our team.</li>
             </ul>
 
-            <h3>D. What We Do Not Collect</h3>
+            <h3>D. Additional Information On Data Collection &amp; Systems</h3>
             <ul>
-              <li>We do not collect payment card or bank details through this website.</li>
-              <li>We do not deploy tracking pixels, advertising cookies, or behavioural profiling tools.</li>
-              <li>We do not use artificial intelligence or machine learning on your personal data.</li>
+              <li>We do not collect payment card or bank details through this website directly; payments are handled via dedicated PCI-compliant processors (Stripe &amp; GoCardless).</li>
+              <li>We use AI virtual assistants (chatbots and voice receptionists) to handle initial enquiries and bookings. These systems process your data strictly to answer your questions and route you to a human team member when requested.</li>
               <li>We do not operate a customer account or login system on this website.</li>
-              <li>We do not ask about medical diagnoses or mental health conditions, and we ask that you do not include such information in your submissions.</li>
             </ul>
           </section>
 
@@ -196,15 +194,15 @@ const PrivacyPolicy = () => {
           <section className="privacy-section" id="special-category">
             <h2>5. Special Category &amp; Criminal Conviction Data</h2>
 
-            <h3>A. Accessibility and Health-Related Disclosures (Client Enquiries)</h3>
+            <h3>A. Accessibility, Recovery and Health-Related Disclosures (Client Enquiries)</h3>
             <p>
-              Our Find a Companion form includes optional fields for accessibility needs and allergies. Where you choose to share information that may touch on health or disability, we treat this with the highest level of care. This information is used solely to plan safe and appropriate visits and is accessible only to authorised Unlonely staff.
+              Our Find a Companion form and Recovery Support enquiry form include fields for accessibility needs, recovery context (such as post-operative or mobility support), and allergies. We collect health and allergy data only when explicitly provided by you for safety, recovery support, and companion matching purposes.
             </p>
             <p>
-              We ask that you share only information directly relevant to your companionship request. We do not ask for medical diagnoses, clinical history, or mental health details, and we request that you do not include such information in your submission.
+              We ask for accessibility needs and allergies strictly to ensure the safety and comfort of your visits. This sensitive data is processed only with your explicit consent and is kept strictly confidential, accessible solely to authorised Unlonely staff and your matched companion.
             </p>
             <p>
-              Where health-related information is voluntarily disclosed, we rely on <strong>Article 9(2)(a) UK GDPR (explicit consent)</strong> for the specific purpose stated, combined with <strong>Schedule 1, Part 1, Paragraph 1 of the Data Protection Act 2018</strong>.
+              Where health-related information is disclosed, we rely on <strong>Article 9(2)(a) UK GDPR (explicit consent)</strong> for the specific purpose stated, combined with <strong>Schedule 1, Part 1, Paragraph 1 of the Data Protection Act 2018</strong>.
             </p>
 
             <h3>B. Criminal Conviction Data (Companion Applications)</h3>
@@ -255,30 +253,21 @@ const PrivacyPolicy = () => {
               This field is entirely optional and exists solely to allow you to provide context that helps us find you the right companion — for example, your preferred topics of conversation, your personality, or specific preferences about how you like to socialise.
             </p>
             <div className="privacy-highlight-box">
-              <strong>Please only share information directly relevant to your companionship request.</strong>
+              <strong>Please share information relevant to your companionship and visit support.</strong>
               <p style={{ marginBottom: 0, marginTop: '0.5rem' }}>
-                Avoid including sensitive medical or personal information. We do not need and do not ask for details about medical conditions, disabilities, mental health diagnoses, or clinical history. If information of this nature is shared, we will handle it with the same confidentiality as other sensitive data.
+                We ask for accessibility needs and allergies strictly to ensure the safety and comfort of your visits. This sensitive data is processed only with your explicit consent and is kept strictly confidential.
               </p>
             </div>
           </section>
 
           {/* 7. Virtual Assistant */}
           <section className="privacy-section" id="virtual-assistant">
-            <h2>7. Our Virtual Assistant (Chatbot)</h2>
+            <h2>7. AI Virtual Assistants (Chat &amp; Phone Receptionist)</h2>
             <p>
-              Our website includes a virtual assistant chatbot to help visitors learn about Unlonely and navigate to the right part of our service.
+              We use AI-powered virtual assistants for our website chat and phone system to help answer your questions and route enquiries. These tools process your messages to provide a response. We do not use your personal data to train public AI models.
             </p>
             <p>
-              <strong>Important:</strong> Our virtual assistant is a fully rule-based chatbot. It:
-            </p>
-            <ul>
-              <li>Does <strong>not</strong> use artificial intelligence, machine learning, or large language models.</li>
-              <li>Does <strong>not</strong> transmit any conversation data to external servers or third parties.</li>
-              <li>Does <strong>not</strong> store conversation history in any database — all chat history is held only in your browser&rsquo;s temporary memory and is cleared when you close or refresh the page.</li>
-              <li>Responds only to pre-defined questions and topics using fixed, locally-stored rules.</li>
-            </ul>
-            <p>
-              If you share personal information during a chat session (such as your name or circumstances), this information is not retained by us and is not accessible to Unlonely staff. If you wish to make a formal enquiry, please use our Find a Companion form or Contact page.
+              When you interact with our website chat or speak with our AI voice receptionist ("Poppy"), conversation details and contact information you provide are processed strictly to answer queries, arrange consultations, and route you to a human team member when requested.
             </p>
           </section>
 
@@ -306,17 +295,37 @@ const PrivacyPolicy = () => {
                   <tr>
                     <td><strong>Supabase</strong></td>
                     <td>Cloud database provider</td>
-                    <td>Secure storage of form submissions (companionship enquiries, companion applications, contact messages). Data is hosted in the United Kingdom (AWS London - eu-west-2). See <a href="#international-transfers">Section 9</a>.</td>
+                    <td>Secure storage of form submissions (companionship enquiries, recovery requests, companion applications, contact messages). Data is hosted in the United Kingdom (AWS London - eu-west-2). See <a href="#international-transfers">Section 9</a>.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Stripe &amp; GoCardless</strong></td>
+                    <td>Payment &amp; subscription processors</td>
+                    <td>Processing payments, direct debits, and subscription memberships securely under PCI-DSS compliance. Unlonely does not store full payment card numbers.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Cal.com</strong></td>
+                    <td>Booking &amp; calendar scheduling</td>
+                    <td>Client consultation bookings, discovery call scheduling, and interview time management.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>LineHQ</strong></td>
+                    <td>AI phone call handling ("Poppy")</td>
+                    <td>Inbound telephone answering, enquiry routing, and voicemail/call transcription for phone enquiries.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Google Gemini</strong></td>
+                    <td>AI chatbot intelligence</td>
+                    <td>Processing website chat messages to provide instant conversational answers and route enquiries. Data is not used to train public models.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Hostinger</strong></td>
+                    <td>Domain registrar &amp; email delivery</td>
+                    <td>Registration of the unlonely.uk domain name, transactional email sending, and waitlist management.</td>
                   </tr>
                   <tr>
                     <td><strong>Netlify</strong></td>
                     <td>Website hosting platform</td>
                     <td>Serves the static website files and processes standard server-level access logs (IP addresses and request timestamps).</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Hostinger</strong></td>
-                    <td>Domain name registrar</td>
-                    <td>Registration of the unlonely.co.uk domain name only. Hostinger does not host the website or process visitor personal data on our behalf.</td>
                   </tr>
                   <tr>
                     <td><strong>GitHub</strong></td>
@@ -364,10 +373,10 @@ const PrivacyPolicy = () => {
               All website typography and font assets are hosted directly on our own web server, ensuring no external font requests or IP disclosures are made to third-party providers.
             </p>
             <p>
-              Hostinger, which provides domain name registration for unlonely.co.uk, is headquartered in Lithuania and operates within the European Economic Area (EEA). The UK has an adequacy decision in respect of the EEA, meaning transfers to EEA-based organisations are considered to provide an adequate level of data protection.
+              Hostinger, which provides domain name registration for unlonely.uk and business mail infrastructure, is headquartered in Lithuania and operates within the European Economic Area (EEA). The UK has an adequacy decision in respect of the EEA, meaning transfers to EEA-based organisations are considered to provide an adequate level of data protection.
             </p>
             <p>
-              If you have questions about international transfers or would like details of the safeguards in place, please contact us at <a href="mailto:privacy@unlonely.co.uk">privacy@unlonely.co.uk</a>.
+              If you have questions about international transfers or would like details of the safeguards in place, please contact us at <a href="mailto:privacy@unlonely.uk">privacy@unlonely.uk</a>.
             </p>
           </section>
 
@@ -398,9 +407,9 @@ const PrivacyPolicy = () => {
                     <td>Necessary to deliver our companionship service and maintain up-to-date preferences and safety contacts, subject to applicable legal requirements.</td>
                   </tr>
                   <tr>
-                    <td><strong>Former clients</strong></td>
-                    <td>Retained only as long as necessary for documented business and legal purposes</td>
-                    <td>To satisfy statutory obligations, insurance conditions, accounting records, and dispute resolution.</td>
+                    <td><strong>Inactive/Former Clients</strong></td>
+                    <td>7 years after the end of the service, in line with UK safeguarding and tax record recommendations</td>
+                    <td>To satisfy statutory obligations, safeguarding accountability, HMRC and tax records, insurance conditions, and dispute resolution.</td>
                   </tr>
                   <tr>
                     <td><strong>Unsuccessful companion applications</strong></td>
@@ -447,7 +456,7 @@ const PrivacyPolicy = () => {
                 To exercise any of the rights above, please contact us by one of the following methods:
               </p>
               <ul>
-                <li><strong>Email:</strong> <a href="mailto:privacy@unlonely.co.uk">privacy@unlonely.co.uk</a> (preferred — please include &ldquo;Privacy Request&rdquo; in the subject line)</li>
+                <li><strong>Email:</strong> <a href="mailto:privacy@unlonely.uk">privacy@unlonely.uk</a> (preferred — please include &ldquo;Privacy Request&rdquo; in the subject line)</li>
                 <li><strong>Post:</strong> <span className="privacy-placeholder-badge">[Registered Office Address, United Kingdom]</span> marked &ldquo;Data Protection Request&rdquo;</li>
               </ul>
               <p>
@@ -466,34 +475,15 @@ const PrivacyPolicy = () => {
 
           {/* 12. Cookies */}
           <section className="privacy-section" id="cookies">
-            <h2>12. Browser Storage &amp; Website Technology</h2>
+            <h2>12. Cookies &amp; Tracking Technologies</h2>
             <p>
-              Our website is a client-side React application. It does <strong>not</strong> set browser cookies. It does <strong>not</strong> use <code>localStorage</code> or <code>sessionStorage</code> in its own application code.
+              Our website uses cookies and similar technologies to ensure core functionality, provide security, and maintain seamless navigation across our forms and services.
             </p>
             <p>
-              Form progress (such as your answers while completing the Find a Companion or Become a Companion wizard) is held in <strong>React component state only</strong> — that is, in-memory in your browser tab. This data is never written to disk and is lost entirely if you close or refresh the page.
+              <strong>Analytics &amp; Advertising Cookies:</strong> Subject to your consent via our Cookie Consent banner, we use analytics and advertising cookies (such as Google Analytics and Meta Pixel) to understand how visitors engage with our website, monitor campaign performance, and deliver relevant advertisements.
             </p>
             <p>
-              The virtual assistant chat history is similarly held in-memory only and is cleared when you close or reload the page.
-            </p>
-            <p>
-              The Supabase JavaScript library used to submit your form data includes internal session-management code that may use <code>localStorage</code> for authenticated user sessions. Because Unlonely does not operate a user login or account system, this code path is not activated and no Supabase session data is written to your browser storage.
-            </p>
-            <p>
-              <strong>We do not deploy:</strong>
-            </p>
-            <ul>
-              <li>Any cookies (session, persistent, tracking, or analytical)</li>
-              <li>Third-party advertising or marketing scripts</li>
-              <li>Behavioural tracking or cross-site profiling technologies</li>
-              <li>Website analytics tools (such as Google Analytics or similar)</li>
-              <li>Social media pixels or tracking scripts</li>
-            </ul>
-            <p>
-              No personal data is transmitted to third parties through the browser. The only external network request made by this website is the submission of your completed form directly to our secure Supabase database when you click Submit.
-            </p>
-            <p>
-              If we introduce any persistent storage, cookies, or analytics tools in the future, this policy will be updated and, where required by law, your consent will be sought in advance.
+              <strong>Your Cookie Choices:</strong> You have full control over your cookie preferences. You may accept or decline optional cookies at any time via our Cookie Consent banner, or adjust your browser settings to block or delete cookies. Disabling strictly necessary cookies may impact the proper functioning of certain website features.
             </p>
           </section>
 
@@ -501,13 +491,10 @@ const PrivacyPolicy = () => {
           <section className="privacy-section" id="marketing">
             <h2>13. Marketing &amp; Communications</h2>
             <p>
-              We do not send unsolicited marketing communications. We will only contact you in connection with your enquiry or application, or in direct response to your request for information.
+              We will only send you marketing communications (such as our email newsletter or service updates) if you have explicitly opted in to receive them, or if you are an existing client and the communication is relevant to your service.
             </p>
             <p>
-              We do not share your contact details with third parties for marketing purposes, and we do not engage in email marketing campaigns, SMS marketing, or automated promotional communications.
-            </p>
-            <p>
-              If we ever introduce marketing communications in the future, we will only do so with your explicit opt-in consent, and we will provide a clear and simple way to opt out at any time.
+              You can opt out of marketing emails at any time by clicking the &lsquo;unsubscribe&rsquo; link at the bottom of our emails or by contacting us directly. We do not share your contact details with third parties for their own marketing purposes.
             </p>
           </section>
 
@@ -532,9 +519,9 @@ const PrivacyPolicy = () => {
             <div className="privacy-contact-card">
               <p><strong>Unlonely — Data Protection Contact</strong></p>
               <p><strong>Legal Entity:</strong> <span className="privacy-placeholder-badge">[Unlonely Legal Entity Name]</span></p>
-              <p><strong>Privacy &amp; Data Requests:</strong> <a href="mailto:privacy@unlonely.co.uk">privacy@unlonely.co.uk</a></p>
-              <p><strong>General Support:</strong> <a href="mailto:hello@unlonely.co.uk">hello@unlonely.co.uk</a></p>
-              <p><strong>Safeguarding:</strong> <a href="mailto:safeguarding@unlonely.co.uk">safeguarding@unlonely.co.uk</a></p>
+              <p><strong>Privacy &amp; Data Requests:</strong> <a href="mailto:privacy@unlonely.uk">privacy@unlonely.uk</a></p>
+              <p><strong>General Support:</strong> <a href="mailto:support@unlonely.uk">support@unlonely.uk</a></p>
+              <p><strong>Safeguarding:</strong> <a href="mailto:safeguarding@unlonely.uk">safeguarding@unlonely.uk</a></p>
               <p><strong>Postal Address:</strong> <span className="privacy-placeholder-badge">[Registered Office Address, United Kingdom]</span> (marked &ldquo;Data Protection Request&rdquo;)</p>
               <p style={{ marginBottom: 0, fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
                 We respond to all verified data protection requests within one calendar month, free of charge.
