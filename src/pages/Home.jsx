@@ -79,7 +79,7 @@ const Home = () => {
 
             {/* Phone Reassurance */}
             <div className="hero-phone-cta animate-fade-in" style={{ animationDelay: '0.38s' }}>
-              <span>Prefer to talk? Call <a href="tel:08001234567" className="hero-phone-number">0800 123 4567</a></span>
+              <span>Prefer to talk? Call <a href="tel:+442046520388" className="hero-phone-number">+44 20 4652 0388</a></span>
             </div>
 
             <div className="trust-bar animate-fade-in" style={{ animationDelay: '0.4s' }}>

@@ -27,6 +27,7 @@ const Footer = () => {
             <h3>Company</h3>
             <Link to="/about">About Us</Link>
             <Link to="/services">Services</Link>
+            <Link to="/recovery">Post-Op Recovery</Link>
             <Link to="/become-companion">Become a Companion</Link>
             <Link to="/blog">Blog & Resources</Link>
           </div>
@@ -44,7 +45,7 @@ const Footer = () => {
             <h3>Get in Touch</h3>
             <div className="contact-item">
               <Phone size={18} />
-              <span>0800 123 4567</span>
+              <a href="tel:+442046520388" style={{ color: 'inherit', textDecoration: 'none' }}>+44 20 4652 0388</a>
             </div>
             <div className="contact-item">
               <Mail size={18} />

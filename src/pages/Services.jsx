@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Coffee, Map, PhoneCall, Calendar, Smile, ShoppingBag } from 'lucide-react';
+import { Coffee, Map, PhoneCall, Calendar, Smile, ShoppingBag, Sparkles } from 'lucide-react';
 import './Services.css';
 
 const Services = () => {
@@ -44,14 +44,17 @@ const Services = () => {
 
   return (
     <div className="services-page animate-fade-in">
-      <div className="container">
-        <div className="text-center services-header">
-          <h1>Our Services</h1>
-          <p>
-            We provide a range of non-medical companionship services designed to bring joy, connection, and peace of mind.
+      {/* Mini Hero */}
+      <section className="mini-hero">
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <h1 className="mini-hero-title">Our Services</h1>
+          <p className="mini-hero-subtitle">
+            A range of flexible, non-medical companionship services designed to bring joy, connection, and everyday peace of mind.
           </p>
         </div>
+      </section>
 
+      <div className="container" style={{ paddingTop: '3.5rem' }}>
         <div className="grid-3 services-grid">
           {services.map((service, index) => (
             <div key={index} className="card">
@@ -69,7 +72,13 @@ const Services = () => {
 
         <div className="text-center services-cta-banner">
           <h2>Not sure which service is right?</h2>
-          <Link to="/contact" className="btn btn-primary">Speak to our Team</Link>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+            We'll guide you through your options and find the ideal companion match.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/contact" className="btn btn-outline">Speak to our Team</Link>
+            <Link to="/find-a-companion" className="btn btn-primary">Book a Companion</Link>
+          </div>
         </div>
       </div>
     </div>

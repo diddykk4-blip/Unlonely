@@ -64,7 +64,7 @@ const Contact = () => {
               <Phone className="info-icon" />
               <div>
                 <h4>Phone</h4>
-                <p>0800 123 4567</p>
+                <p><a href="tel:+442046520388" style={{ color: 'inherit', textDecoration: 'none' }}>+44 20 4652 0388</a></p>
               </div>
             </div>
             

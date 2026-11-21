@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { 
   MessageCircle, 
   X, 
@@ -268,6 +268,7 @@ const getBotResponse = (userText) => {
 };
 
 const ChatWidget = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [messages, setMessages] = useState([INITIAL_GREETING]);
@@ -279,13 +280,20 @@ const ChatWidget = () => {
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Show welcome popup after 4 seconds
+  // Show welcome popup after 4 seconds ONLY on the home/hero page ("/")
   useEffect(() => {
+    // If user is not on the home page, ensure popup is hidden and don't trigger timer
+    if (location.pathname !== '/') {
+      setShowPopup(false);
+      return;
+    }
+
     const timer = setTimeout(() => {
       setShowPopup(true);
     }, 4000);
+
     return () => clearTimeout(timer);
-  }, []);
+  }, [location.pathname]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -459,10 +467,10 @@ const ChatWidget = () => {
             <span className="chat-human-label">Need a real person?</span>
             <div className="chat-human-options">
               <a 
-                href="tel:08001234567" 
+                href="tel:+442046520388" 
                 className="chat-human-icon-btn" 
-                title="Call our team: 0800 123 4567"
-                aria-label="Call 0800 123 4567"
+                title="Call our team: +44 20 4652 0388"
+                aria-label="Call +44 20 4652 0388"
               >
                 <Phone size={15} />
               </a>
@@ -520,8 +528,8 @@ const ChatWidget = () => {
                     <div className="chat-contact-tray">
                       <p className="tray-title">Choose how you'd like to reach our team:</p>
                       <div className="tray-buttons">
-                        <a href="tel:08001234567" className="tray-btn voice">
-                          <Phone size={15} /> Voice: 0800 123 4567
+                        <a href="tel:+442046520388" className="tray-btn voice">
+                          <Phone size={15} /> Voice: +44 20 4652 0388
                         </a>
                         <Link to="/contact" className="tray-btn message" onClick={() => setIsOpen(false)}>
                           <Mail size={15} /> SMS / Email Form

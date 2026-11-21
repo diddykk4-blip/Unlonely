@@ -14,6 +14,7 @@ import FindCompanion from './pages/FindCompanion';
 import Blog from './pages/Blog';
 import WhoWeSupportDetail from './pages/WhoWeSupportDetail';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Recovery from './pages/Recovery';
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
           <Route path="match" element={<FindCompanion />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="privacy" element={<PrivacyPolicy />} />
+          <Route path="recovery" element={<Recovery />} />
+          <Route path="post-op-recovery" element={<Recovery />} />
           <Route path="blog" element={<Blog />} />
         </Route>
       </Routes>
