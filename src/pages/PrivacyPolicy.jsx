@@ -60,9 +60,8 @@ const PrivacyPolicy = () => {
               </p>
               <ul>
                 <li><strong>Trading Name:</strong> Unlonely</li>
-                <li><strong>Legal Entity:</strong> <span className="privacy-placeholder-badge">[Unlonely Legal Entity Name]</span></li>
-                <li><strong>Company Registration Number:</strong> <span className="privacy-placeholder-badge">[Registered in England &amp; Wales No. XXXXXXXX]</span></li>
-                <li><strong>Registered Office:</strong> <span className="privacy-placeholder-badge">[Registered Office Address, United Kingdom]</span></li>
+                <li><strong>Legal Entity:</strong> Unlonely Ltd</li>
+                <li><strong>Registered Office:</strong> 20 Belsham Street, Hackney, London, E9 6NG</li>
                 <li><strong>Data Protection Contact:</strong> <a href="mailto:privacy@unlonely.uk">privacy@unlonely.uk</a></li>
                 <li><strong>General Enquiries:</strong> <a href="mailto:support@unlonely.uk">support@unlonely.uk</a></li>
               </ul>
@@ -457,7 +456,7 @@ const PrivacyPolicy = () => {
               </p>
               <ul>
                 <li><strong>Email:</strong> <a href="mailto:privacy@unlonely.uk">privacy@unlonely.uk</a> (preferred — please include &ldquo;Privacy Request&rdquo; in the subject line)</li>
-                <li><strong>Post:</strong> <span className="privacy-placeholder-badge">[Registered Office Address, United Kingdom]</span> marked &ldquo;Data Protection Request&rdquo;</li>
+                <li><strong>Post:</strong> Unlonely Ltd, 20 Belsham Street, Hackney, London, E9 6NG (marked &ldquo;Data Protection Request&rdquo;)</li>
               </ul>
               <p>
                 We may ask you to verify your identity before processing your request. All verified requests are handled free of charge. We will respond within <strong>one calendar month</strong> of receiving your request. Where a request is complex or numerous, we may extend this by up to two additional months — we will notify you if this applies.
@@ -518,11 +517,11 @@ const PrivacyPolicy = () => {
 
             <div className="privacy-contact-card">
               <p><strong>Unlonely — Data Protection Contact</strong></p>
-              <p><strong>Legal Entity:</strong> <span className="privacy-placeholder-badge">[Unlonely Legal Entity Name]</span></p>
+              <p><strong>Legal Entity:</strong> Unlonely Ltd</p>
               <p><strong>Privacy &amp; Data Requests:</strong> <a href="mailto:privacy@unlonely.uk">privacy@unlonely.uk</a></p>
               <p><strong>General Support:</strong> <a href="mailto:support@unlonely.uk">support@unlonely.uk</a></p>
               <p><strong>Safeguarding:</strong> <a href="mailto:safeguarding@unlonely.uk">safeguarding@unlonely.uk</a></p>
-              <p><strong>Postal Address:</strong> <span className="privacy-placeholder-badge">[Registered Office Address, United Kingdom]</span> (marked &ldquo;Data Protection Request&rdquo;)</p>
+              <p><strong>Postal Address:</strong> Unlonely Ltd, 20 Belsham Street, Hackney, London, E9 6NG (marked &ldquo;Data Protection Request&rdquo;)</p>
               <p style={{ marginBottom: 0, fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
                 We respond to all verified data protection requests within one calendar month, free of charge.
               </p>
