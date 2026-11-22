@@ -295,8 +295,8 @@ $fromHeader = "The Unlonely Team <support@unlonely.uk>";
 // Audience-specific Reply-To & Internal Notification routing
 switch ($template) {
     case 'find-companion':
-        $replyToHeader = "inquiries@unlonely.uk";
-        $internalNotificationRecipient = "inquiries@unlonely.uk";
+        $replyToHeader = "enquiries@unlonely.uk";
+        $internalNotificationRecipient = "enquiries@unlonely.uk";
         break;
     case 'become-companion':
         $replyToHeader = "recruitments@unlonely.uk";

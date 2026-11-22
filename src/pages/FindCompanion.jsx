@@ -158,7 +158,7 @@ const FindCompanion = () => {
           <p className="wizard-subtitle mb-lg" style={{ maxWidth: '600px', margin: '0 auto 3rem', lineHeight: '1.8' }}>
             Our team personally reviews every request to ensure we understand your companionship preferences and find a suitable match.<br/><br/>
             A member of our team will contact you directly by your preferred contact method within 24 hours to discuss next steps.<br/><br/>
-            If you have questions about your request, please contact our companionship team at <a href="mailto:inquiries@unlonely.uk" style={{ color: 'var(--brand-orange, #FF6B4A)', fontWeight: 600 }}>inquiries@unlonely.uk</a>.
+            If you have questions about your request, please contact our companionship team at <a href="mailto:enquiries@unlonely.uk" style={{ color: 'var(--brand-orange, #FF6B4A)', fontWeight: 600 }}>enquiries@unlonely.uk</a>.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
             <Link to="/" className="btn btn-primary">Return Home</Link>
