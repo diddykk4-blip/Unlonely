@@ -84,9 +84,9 @@ const Recovery = () => {
       // Extract first name safely from full name
       const parsedFirstName = formData.fullName ? formData.fullName.trim().split(' ')[0] : '';
 
-      // Fire-and-forget branded confirmation email (non-blocking)
+      // Fire-and-forget branded Post-Op Recovery welcome email (non-blocking)
       triggerWelcomeEmail({
-        template: 'contact',
+        template: 'post-op-recovery',
         to: formData.email,
         firstName: parsedFirstName
       });
