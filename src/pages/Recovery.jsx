@@ -10,7 +10,6 @@ import {
   ChevronDown, 
   ChevronUp, 
   AlertCircle, 
-  Sparkles,
   ArrowRight,
   Clock,
   Car,
@@ -118,11 +117,6 @@ const Recovery = () => {
       <section className="recovery-hero">
         <div className="recovery-hero-overlay" />
         <div className="container recovery-hero-content text-center">
-          <div className="recovery-pre-badge animate-fade-in">
-            <Sparkles size={16} />
-            <span>Short-Term Support for Surgery Recovery</span>
-          </div>
-
           <h1 className="recovery-hero-title animate-fade-in">
             Recovering from surgery shouldn't mean recovering alone.
           </h1>

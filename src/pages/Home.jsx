@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Users, Clock, Heart, Phone, ArrowRight, ChevronDown, Star, ShieldCheck, X, Sparkles } from 'lucide-react';
+import { Shield, Users, Clock, Heart, Phone, ArrowRight, ChevronDown, Star, ShieldCheck, X } from 'lucide-react';
 import './Home.css';
 
 const HOME_FAQS = [
@@ -100,10 +100,6 @@ const Home = () => {
         <div className="container">
           <div className="hero-recovery-card animate-fade-in">
             <div className="hero-recovery-content">
-              <div className="hero-recovery-tag">
-                <Sparkles size={14} />
-                <span>Specialist Short-Term Support</span>
-              </div>
               <h3 className="hero-recovery-heading">
                 Recovering from surgery? <span>We're here for the first few weeks at home.</span>
               </h3>
