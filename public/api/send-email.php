@@ -291,10 +291,27 @@ $htmlMessage = buildEmailTemplate($previewText, $contentHtml);
 $senderName = "The Unlonely Team";
 $senderEmail = "support@unlonely.uk";
 $fromHeader = "The Unlonely Team <support@unlonely.uk>";
-$replyToHeader = "support@unlonely.uk";
+
+// Audience-specific Reply-To & Internal Notification routing
+switch ($template) {
+    case 'find-companion':
+        $replyToHeader = "inquiries@unlonely.uk";
+        $internalNotificationRecipient = "inquiries@unlonely.uk";
+        break;
+    case 'become-companion':
+        $replyToHeader = "recruitments@unlonely.uk";
+        $internalNotificationRecipient = "recruitments@unlonely.uk";
+        break;
+    case 'post-op-recovery':
+    case 'recovery':
+    default:
+        $replyToHeader = "support@unlonely.uk";
+        $internalNotificationRecipient = "support@unlonely.uk";
+        break;
+}
 
 // SMTP Socket Sender
-function sendSmtpMail($host, $port, $user, $pass, $fromEmail, $fromDisplay, $to, $subject, $html) {
+function sendSmtpMail($host, $port, $user, $pass, $fromEmail, $fromDisplay, $replyTo, $to, $subject, $html) {
     $timeout = 15;
     $context = stream_context_create([
         'ssl' => [
@@ -350,7 +367,7 @@ function sendSmtpMail($host, $port, $user, $pass, $fromEmail, $fromDisplay, $to,
         "MIME-Version: 1.0",
         "Content-Type: text/html; charset=UTF-8",
         "From: " . $fromDisplay . " <" . $fromEmail . ">",
-        "Reply-To: " . $fromEmail,
+        "Reply-To: " . $replyTo,
         "To: $to",
         "Subject: =?UTF-8?B?" . base64_encode($subject) . "?=",
         "Date: " . date("r"),
@@ -399,7 +416,7 @@ if (!empty($postmarkToken)) {
     curl_close($ch);
 
     if ($pmHttpCode === 200) {
-        echo json_encode(["success" => true, "method" => "postmark-api"]);
+        echo json_encode(["success" => true, "method" => "postmark-api", "replyTo" => $replyToHeader, "notificationRecipient" => $internalNotificationRecipient]);
         exit;
     }
 }
@@ -415,12 +432,12 @@ if (empty($smtpPass)) {
 
 // Attempt Port 465 SSL first, fallback to 587 TLS
 try {
-    sendSmtpMail($smtpHost, 465, $smtpUser, $smtpPass, $senderEmail, $senderName, $to, $subject, $htmlMessage);
-    echo json_encode(["success" => true, "method" => "smtp-ssl-465"]);
+    sendSmtpMail($smtpHost, 465, $smtpUser, $smtpPass, $senderEmail, $senderName, $replyToHeader, $to, $subject, $htmlMessage);
+    echo json_encode(["success" => true, "method" => "smtp-ssl-465", "replyTo" => $replyToHeader, "notificationRecipient" => $internalNotificationRecipient]);
 } catch (Exception $e465) {
     try {
-        sendSmtpMail($smtpHost, 587, $smtpUser, $smtpPass, $senderEmail, $senderName, $to, $subject, $htmlMessage);
-        echo json_encode(["success" => true, "method" => "smtp-tls-587-fallback"]);
+        sendSmtpMail($smtpHost, 587, $smtpUser, $smtpPass, $senderEmail, $senderName, $replyToHeader, $to, $subject, $htmlMessage);
+        echo json_encode(["success" => true, "method" => "smtp-tls-587-fallback", "replyTo" => $replyToHeader, "notificationRecipient" => $internalNotificationRecipient]);
     } catch (Exception $e587) {
         // Last resort fallback: standard PHP mail()
         $headers = "MIME-Version: 1.0\r\n";
@@ -430,7 +447,7 @@ try {
         
         $mailSuccess = @mail($to, $subject, $htmlMessage, $headers);
         if ($mailSuccess) {
-            echo json_encode(["success" => true, "method" => "php-mail-fallback"]);
+            echo json_encode(["success" => true, "method" => "php-mail-fallback", "replyTo" => $replyToHeader, "notificationRecipient" => $internalNotificationRecipient]);
         } else {
             http_response_code(500);
             echo json_encode([

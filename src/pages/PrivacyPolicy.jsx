@@ -62,8 +62,7 @@ const PrivacyPolicy = () => {
                 <li><strong>Trading Name:</strong> Unlonely</li>
                 <li><strong>Legal Entity:</strong> Unlonely Ltd</li>
                 <li><strong>Registered Office:</strong> 20 Belsham Street, Hackney, London, E9 6NG</li>
-                <li><strong>Data Protection Contact:</strong> <a href="mailto:privacy@unlonely.uk">privacy@unlonely.uk</a></li>
-                <li><strong>General Enquiries:</strong> <a href="mailto:support@unlonely.uk">support@unlonely.uk</a></li>
+                <li><strong>Data Protection &amp; General Enquiries:</strong> <a href="mailto:support@unlonely.uk">support@unlonely.uk</a></li>
               </ul>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: 0 }}>
                 <em>This document sets out our honest and transparent data handling practices under UK data protection law. We do not make claims of certified compliance status.</em>
@@ -375,7 +374,7 @@ const PrivacyPolicy = () => {
               Hostinger, which provides domain name registration for unlonely.uk and business mail infrastructure, is headquartered in Lithuania and operates within the European Economic Area (EEA). The UK has an adequacy decision in respect of the EEA, meaning transfers to EEA-based organisations are considered to provide an adequate level of data protection.
             </p>
             <p>
-              If you have questions about international transfers or would like details of the safeguards in place, please contact us at <a href="mailto:privacy@unlonely.uk">privacy@unlonely.uk</a>.
+              If you have questions about international transfers or would like details of the safeguards in place, please contact us at <a href="mailto:support@unlonely.uk">support@unlonely.uk</a>.
             </p>
           </section>
 
@@ -455,7 +454,7 @@ const PrivacyPolicy = () => {
                 To exercise any of the rights above, please contact us by one of the following methods:
               </p>
               <ul>
-                <li><strong>Email:</strong> <a href="mailto:privacy@unlonely.uk">privacy@unlonely.uk</a> (preferred — please include &ldquo;Privacy Request&rdquo; in the subject line)</li>
+                <li><strong>Email:</strong> <a href="mailto:support@unlonely.uk">support@unlonely.uk</a> (preferred — please include &ldquo;Privacy Request&rdquo; in the subject line)</li>
                 <li><strong>Post:</strong> Unlonely Ltd, 20 Belsham Street, Hackney, London, E9 6NG (marked &ldquo;Data Protection Request&rdquo;)</li>
               </ul>
               <p>
@@ -516,11 +515,9 @@ const PrivacyPolicy = () => {
             </p>
 
             <div className="privacy-contact-card">
-              <p><strong>Unlonely — Data Protection Contact</strong></p>
+              <p><strong>Unlonely — Data Protection &amp; Support Contact</strong></p>
               <p><strong>Legal Entity:</strong> Unlonely Ltd</p>
-              <p><strong>Privacy &amp; Data Requests:</strong> <a href="mailto:privacy@unlonely.uk">privacy@unlonely.uk</a></p>
-              <p><strong>General Support:</strong> <a href="mailto:support@unlonely.uk">support@unlonely.uk</a></p>
-              <p><strong>Safeguarding:</strong> <a href="mailto:safeguarding@unlonely.uk">safeguarding@unlonely.uk</a></p>
+              <p><strong>Privacy, Data Requests &amp; Support:</strong> <a href="mailto:support@unlonely.uk">support@unlonely.uk</a></p>
               <p><strong>Postal Address:</strong> Unlonely Ltd, 20 Belsham Street, Hackney, London, E9 6NG (marked &ldquo;Data Protection Request&rdquo;)</p>
               <p style={{ marginBottom: 0, fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
                 We respond to all verified data protection requests within one calendar month, free of charge.

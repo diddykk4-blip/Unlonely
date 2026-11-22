@@ -40,7 +40,7 @@ const Safety = () => {
         <div className="mt-4" style={{ backgroundColor: '#fff', padding: 'var(--space-md)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-sm)' }}>
           <h2 className="mb-sm">Complaints & Feedback Process</h2>
           <p className="mb-md">We welcome all feedback and take every complaint seriously. If you have any concerns, our support team is available during working hours to investigate and resolve issues swiftly.</p>
-          <a href="mailto:safeguarding@unlonely.uk" className="btn btn-outline">Contact Safeguarding Team</a>
+          <a href="mailto:support@unlonely.uk" className="btn btn-outline">Contact Support Team</a>
         </div>
       </div>
     </div>

@@ -157,8 +157,11 @@ const BecomeCompanion = () => {
         <div className="success-screen">
           <CheckCircle2 size={80} className="success-icon" />
           <h1 className="wizard-title mb-sm">Application Submitted</h1>
-          <p className="wizard-subtitle" style={{ maxWidth: '500px', margin: '0 auto' }}>
+          <p className="wizard-subtitle" style={{ maxWidth: '500px', margin: '0 auto 1.5rem' }}>
             Thank you for applying to be a companion. We are reviewing your details and will be in touch shortly regarding the next steps in our vetting process.
+          </p>
+          <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
+            Questions regarding recruitment? Contact our companion onboarding team at <a href="mailto:recruitments@unlonely.uk" style={{ color: 'var(--brand-orange, #FF6B4A)', fontWeight: 600 }}>recruitments@unlonely.uk</a>.
           </p>
         </div>
       </div>

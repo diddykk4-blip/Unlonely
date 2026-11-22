@@ -506,7 +506,7 @@ const Recovery = () => {
                 <CheckCircle2 size={56} color="var(--primary-color)" style={{ margin: '0 auto 1.25rem' }} />
                 <h3 style={{ fontSize: '1.75rem', marginBottom: '0.75rem' }}>Recovery Enquiry Received</h3>
                 <p style={{ color: 'var(--text-secondary)', maxWidth: '520px', margin: '0 auto 1.5rem' }}>
-                  Thank you. Our recovery support coordinator will review your dates and contact you within 24 hours to confirm companion availability.
+                  Thank you. Our recovery support coordinator will review your dates and contact you within 24 hours to confirm companion availability. If you have any questions, you can also reach our support team at <a href="mailto:support@unlonely.uk" style={{ color: 'var(--brand-orange, #FF6B4A)', fontWeight: 600 }}>support@unlonely.uk</a>.
                 </p>
                 <a href="tel:+442046520388" className="btn btn-outline">
                   Need faster assistance? Call +44 20 4652 0388
