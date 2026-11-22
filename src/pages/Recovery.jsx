@@ -17,6 +17,7 @@ import {
   Coffee
 } from 'lucide-react';
 import { submitContactInquiry } from '../services/api';
+import { triggerWelcomeEmail } from '../services/emailService';
 import './Recovery.css';
 
 const Recovery = () => {
@@ -79,6 +80,16 @@ const Recovery = () => {
       });
 
       setIsSuccess(true);
+
+      // Extract first name safely from full name
+      const parsedFirstName = formData.fullName ? formData.fullName.trim().split(' ')[0] : '';
+
+      // Fire-and-forget branded confirmation email (non-blocking)
+      triggerWelcomeEmail({
+        template: 'contact',
+        to: formData.email,
+        firstName: parsedFirstName
+      });
     } catch (err) {
       console.error('Recovery enquiry error:', err);
       setErrorMessage('Could not send your enquiry online. Please call us directly on +44 20 4652 0388.');

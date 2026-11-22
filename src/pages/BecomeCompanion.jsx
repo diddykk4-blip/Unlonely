@@ -4,6 +4,7 @@ import { CheckCircle2, AlertTriangle, ShieldCheck } from 'lucide-react';
 import WizardLayout from '../components/WizardLayout';
 import { TextInput, SelectInput, CheckboxGroup, RadioGroup, SingleCheckbox, TextArea } from '../components/FormElements';
 import { submitApplication } from '../services/api';
+import { triggerWelcomeEmail } from '../services/emailService';
 
 const INITIAL_STATE = {
   fullName: '',
@@ -125,6 +126,16 @@ const BecomeCompanion = () => {
         };
         await submitApplication('companion_application', payload);
         setIsSuccess(true);
+
+        // Extract first name safely from full name
+        const parsedFirstName = formData.fullName ? formData.fullName.trim().split(' ')[0] : '';
+
+        // Fire-and-forget branded welcome email confirmation (non-blocking)
+        triggerWelcomeEmail({
+          template: 'become-companion',
+          to: formData.email,
+          firstName: parsedFirstName
+        });
       } catch (error) {
         console.error("Submission failed", error);
         alert("Something went wrong. Please try again.");

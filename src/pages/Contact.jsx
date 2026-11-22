@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, Clock, CheckCircle2 } from 'lucide-react';
 import { submitContactInquiry } from '../services/api';
+import { triggerWelcomeEmail } from '../services/emailService';
 import './Contact.css';
 
 const Contact = () => {
@@ -38,6 +39,16 @@ const Contact = () => {
         message: formData.message
       });
       setIsSuccess(true);
+
+      // Extract first name safely from full name
+      const parsedFirstName = formData.name ? formData.name.trim().split(' ')[0] : '';
+
+      // Fire-and-forget branded confirmation email (non-blocking)
+      triggerWelcomeEmail({
+        template: 'contact',
+        to: formData.email,
+        firstName: parsedFirstName
+      });
     } catch (err) {
       console.error('Contact submission error');
       setErrorMessage('Something went wrong sending your message. Please try again or call us directly.');

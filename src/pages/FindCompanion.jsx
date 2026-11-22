@@ -4,6 +4,7 @@ import { CheckCircle2, User, Users, HeartHandshake, Info } from 'lucide-react';
 import WizardLayout from '../components/WizardLayout';
 import { TextInput, SelectInput, CheckboxGroup, SingleCheckbox, TextArea, SelectableCard } from '../components/FormElements';
 import { submitApplication } from '../services/api';
+import { triggerWelcomeEmail } from '../services/emailService';
 
 const INITIAL_STATE = {
   whoIsThisFor: '',
@@ -123,6 +124,13 @@ const FindCompanion = () => {
         };
         await submitApplication('client_intake', payload);
         setIsSuccess(true);
+
+        // Fire-and-forget branded welcome email confirmation (non-blocking)
+        triggerWelcomeEmail({
+          template: 'find-companion',
+          to: formData.email,
+          firstName: formData.firstName
+        });
       } catch (error) {
         console.error("Submission failed", error);
         alert("Something went wrong. Please try again.");
