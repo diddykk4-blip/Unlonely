@@ -1,0 +1,19 @@
+<?php
+/**
+ * Unlonely SMTP Credentials — Hostinger
+ * ======================================
+ * IMPORTANT: Do NOT commit this file to Git.
+ * Upload it directly to your Hostinger server via File Manager or FTP
+ * and place it at:  public_html/api/smtp_config.php
+ *
+ * This file is included by send-email.php to supply the SMTP password
+ * without it ever appearing in source code or environment variables.
+ *
+ * Instructions:
+ * 1. Replace YOUR_HOSTINGER_EMAIL_PASSWORD_HERE with your actual Hostinger
+ *    mailbox password for support@unlonely.uk
+ * 2. Upload this file to Hostinger via File Manager → public_html/api/smtp_config.php
+ * 3. Verify the file permission is set to 600 (owner read/write only)
+ */
+
+return 'YOUR_HOSTINGER_EMAIL_PASSWORD_HERE';

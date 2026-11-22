@@ -1,9 +1,9 @@
 /**
  * Client-side email triggering service.
- * Sends asynchronous POST request to the serverless Netlify function.
- * 
+ * Sends an asynchronous POST to the Hostinger PHP mailer endpoint at /api/send-email.php.
+ *
  * Guarantees:
- * 1. Non-blocking & fire-and-forget: email dispatch failures never interrupt or fail the user's form submission.
+ * 1. Non-blocking & fire-and-forget: email failures never interrupt a form submission.
  * 2. Deduplication: prevents multiple dispatches on repeated clicks.
  * 3. Never exposes SMTP credentials or sensitive data in client-side code.
  */
@@ -32,8 +32,8 @@ export const triggerWelcomeEmail = async ({ template, to, firstName }) => {
   }, 5 * 60 * 1000);
 
   try {
-    // Fire to the Netlify serverless endpoint
-    const response = await fetch('/.netlify/functions/send-email', {
+    // POST to the Hostinger PHP endpoint — credentials remain server-side only
+    const response = await fetch('/api/send-email.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -46,14 +46,14 @@ export const triggerWelcomeEmail = async ({ template, to, firstName }) => {
     });
 
     if (!response.ok) {
-      console.warn(`[Email Trigger] Serverless function responded with status: ${response.status}`);
+      console.warn(`[Email Trigger] PHP endpoint responded with status: ${response.status}`);
       return { success: false, status: response.status };
     }
 
     const data = await response.json();
     return { success: true, data };
   } catch (err) {
-    // Non-blocking catch to ensure website forms never break
+    // Non-blocking — website forms always succeed regardless of email outcome
     console.warn('[Email Trigger] Non-critical background email dispatch warning:', err.message);
     return { success: false, error: err.message };
   }

@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# SMTP credentials — never commit the real config, only the .example template
+public/api/smtp_config.php
+smtp_config.php
