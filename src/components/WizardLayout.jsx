@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './wizard.css';
 
@@ -15,10 +15,22 @@ const WizardLayout = ({
   children,
   submitLabel = "Continue"
 }) => {
+  const containerRef = useRef(null);
   const progressPercentage = ((currentStep) / totalSteps) * 100;
 
+  // Whenever the step changes, smoothly scroll to top of the wizard container
+  useEffect(() => {
+    if (containerRef.current) {
+      const topOffset = containerRef.current.getBoundingClientRect().top + window.pageYOffset - 90;
+      window.scrollTo({
+        top: Math.max(0, topOffset),
+        behavior: 'smooth'
+      });
+    }
+  }, [currentStep]);
+
   return (
-    <div className="wizard-container">
+    <div className="wizard-container" ref={containerRef}>
       <div className="wizard-header">
         <h1 className="wizard-title">{title}</h1>
         {intro && <p className="wizard-subtitle">{intro}</p>}
