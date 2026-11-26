@@ -16,6 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// Error logging helper — writes to PHP error log (visible in Hostinger logs panel)
+function logMailError($context, $message) {
+    error_log("[Unlonely Mailer] [$context] $message");
+}
+
 $input = file_get_contents('php://input');
 $body = json_decode($input, true);
 
